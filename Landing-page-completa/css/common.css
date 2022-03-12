@@ -1,0 +1,441 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    /*font-family: 'Pacifico', cursive;*/
+}
+
+/* Global */
+.pulsante {
+    background-color: #EE7560;
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px;
+    line-height: 30px;
+    display: inline-block;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    border: 2px #EE7560 solid;
+}
+.pulsante:hover {
+    background-color: white;
+    color: #EE7560;
+}
+
+section {    
+    transition: all 0.3s ease-out;
+    opacity: 0;
+}
+section.active {
+    opacity: 1;
+}
+/* /Global */
+
+img {
+    display: block;
+}
+
+header {
+    background: white;
+    padding: 10px 0 0 0;
+}
+header img {
+    margin: 0 auto 0 auto;
+}
+
+nav {
+    background-color: #EE7560;
+    margin-top: 10px;
+}
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+ul li {    
+    list-style: none;
+    padding: 0 2px;
+}
+ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 0 10px;
+    line-height: 30px;
+    color: white;
+    transition: all 0.3s ease-out;
+    display: block;
+}
+ul li a:hover {
+    color: #EE7560;
+    background-color: white;
+}
+
+.tornasu {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}
+.tornasu a {
+    padding: 5px 15px;
+    text-decoration: none;
+    color: white;
+    background: #EE7560;
+    border-radius: 20px;
+}
+
+/* Hero */
+#hero {
+    width: 100%;
+    position: relative;
+}
+#hero img {
+    width: 100%;
+    height: auto;
+}
+#hero .abs {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+#hero .abs h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 70px;
+    line-height: 80px;
+    color: #EE7560;
+    text-align: center;
+}
+
+/*Chi siamo*/
+#chi_siamo {
+    width: 100%;
+    max-width: 990px;
+    padding: 100px 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+#chi_siamo h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 50px;
+    line-height: 70px;
+    padding-bottom: 20px;
+    color: #EE7560;
+}
+
+/*VANTAGGI*/
+#vantaggi {
+    background: #f8f3f0;
+    padding: 100px 50px;
+}
+#vantaggi .flex-container {
+    display: flex;
+    justify-content: center;
+}
+#vantaggi .flex-container .flex-item {
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease-out;
+    top: 100px;
+}
+#vantaggi h2 {
+    color: #EE7560;
+    font-family: 'Pacifico', cursive;
+    padding-bottom: 10px;     
+}
+
+/*Form*/
+#contattaci {
+    width: 100%;
+    max-width: 990px;
+    margin: 0 auto;
+    padding: 100px 50px;
+}
+#contattaci h2 {
+    text-align: center;
+    padding-bottom: 20px;
+    font-family: 'Pacifico', cursive;
+    color: #EE7560;
+    font-size: 40px;
+}
+#contattaci .carriera {
+    width: 100%;
+}
+#contattaci .carriera #cars {
+    width: 50%;
+    text-align: center;
+    padding: 5px 0;
+    transform: translateX(50%);
+    border: 1px #EE7560 solid;
+    border-radius: 10px;
+}
+#contattaci .carriera #cars option:hover {
+    color: white;
+    background-color: #EE7560;
+}
+#contattaci .flex-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+#contattaci .flex-form > div {
+    padding: 20px;
+}
+#contattaci .flex-form .inputDiv {
+    width: 50%;
+}
+#contattaci .flex-form .textareaDiv {
+    width: 100%;
+    text-align: left;
+}
+#contattaci .flex-form .textareaDiv label {
+    padding-left: 15px;
+    font-size: 14px;
+}
+#contattaci .flex-form .controllo {
+    padding: 10px;
+}
+#contattaci .flex-form .textareaDiv .controllo {
+    margin-top: 5px;
+}
+#contattaci .flex-form .inputDiv .left {     
+    display: block;
+    font-size: 14px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    text-align: left;
+}
+#contattaci .flex-form input[type="text"], #contattaci .flex-form input[type="email"] {
+    width: 100%;
+    display: block;
+    background-color: #fafafa;
+    min-height: 50px;
+    border: none;
+    border-radius: 10px;
+}
+#contattaci .flex-form textarea {
+    width: 100%;
+    background: #fafafa;
+    min-height: 100px;
+    resize: none;
+    display: block;
+    border: none;
+    border-radius: 10px;
+}
+.privacy {
+    width: 100%;
+    margin: 20px 20px;
+    background-color: #fafafa;
+    color: rgb(3, 104, 129);
+    border-radius: 10px;
+}
+.privacy .radio {
+    display: inline-block;
+    text-align: left;
+    margin: 5px 10px;
+}
+
+/*FOOTER*/
+footer {
+    background: black;
+    padding: 100px 50px;
+    color: white;
+}
+footer p {
+    text-align: center;
+}
+footer p a.credits {
+    color: white;
+    text-decoration: underline;
+}
+footer p a.credits:hover {
+    text-decoration: none;
+}
+
+@media all and (max-width: 990px) {
+    header img {
+        width: 100px;
+        height: auto;
+    }
+    ul li a {
+        font-size: 16px;
+    }
+
+    #hero .abs h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    #chi_siamo {
+        padding: 50px 20px;
+    }
+    #chi_siamo p {
+        font-size: 14px;
+    }
+    #chi_siamo h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    #vantaggi {
+        padding: 50px 20px;
+    }
+    #vantaggi .flex-container {
+        flex-wrap: wrap;
+    }
+    #vantaggi .flex-container .flex-item {
+        width: 100%;
+    }
+    #vantaggi .flex-container .flex-item h2 {
+        font-size: 20px;
+    }
+    #vantaggi .flex-container .flex-item p {
+        font-size: 14px;
+    }
+
+    #contattaci {
+        padding: 50px 20px;
+    }
+    #contattaci .carriera #cars {
+        font-size: 11px;
+    }
+    #contattaci h2 {
+        font-size: 30px;
+    }
+    #contattaci .flex-form .inputDiv {
+        width: 100%;
+        padding: 15px;
+    }    
+    #contattaci .flex-form .inputDiv .left {
+        font-size: 14px;
+    }
+    #contattaci .flex-form .controllo {
+        font-size: 14px;
+        padding: 13px;
+    }
+    #contattaci .flex-form .textareaDiv {
+        padding: 15px;
+    }
+    #contattaci .flex-form .textareaDiv label {
+        font-size: 14px;
+    }
+
+    .privacy p {
+        font-size: 14px;
+    }
+    .privacy .radio {
+        margin: 20px 0 10px;
+    }
+    .privacy .radio input[type="radio"] {
+        width: 10px;
+        height: 10px;
+    }
+    .privacy .radio label {
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 50px 20px;
+        font-size: 13px;
+    }
+}
+
+@media all and (min-width: 1600px) {
+    header img {
+        width: 300px;
+        height: auto;
+    }
+    
+    ul li a {
+        font-size: 35px;
+        padding: 0 30px;
+        line-height: 55px;
+    }
+
+    #hero .abs h1 {
+        font-size: 100px;
+        line-height: 110px;
+    }
+    #chi_siamo {
+        padding: 130px 75px;
+        max-width: 1650px;
+    }
+    #chi_siamo h2 {
+        font-size: 70px;
+        line-height: 100px;
+    }
+    #chi_siamo p {
+        font-size: 22px;
+    }
+
+    .pulsante {
+        font-size: 22px;
+        padding: 15px 35px;
+        line-height: 40px;
+        margin-top: 25px;
+    }
+
+    #vantaggi {
+        padding: 130px 75px;
+    }
+    #vantaggi .flex-container .flex-item {
+        width: 100%;
+    }
+    #vantaggi .flex-container .flex-item h2 {
+        font-size: 33px;
+    }
+    #vantaggi .flex-container .flex-item p {
+        font-size: 22px;
+    }
+
+    #contattaci {
+        padding: 130px 75px;
+        max-width: 1550px;
+    }
+    #contattaci h2 {
+        font-size: 50px;
+    }
+    #contattaci .carriera #cars {
+        font-size: 20px;
+    }
+    #contattaci .flex-form .inputDiv .left {
+        font-size: 20px;
+    }
+    #contattaci .flex-form .controllo {
+        font-size: 20px;
+        padding: 18px;
+    }
+    #contattaci .flex-form .textareaDiv label {
+        font-size: 20px;
+    }
+
+    .privacy p {
+        font-size: 20px;
+    }
+    .privacy .radio input[type="radio"] {
+        width: 16px;
+        height: 16px;
+    }
+    .privacy .radio label {
+        font-size: 20px;
+    }
+
+    .tornasu a {
+        font-size: 20px;
+    }
+
+    footer {
+        padding: 130px 75px;
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="it">
+    <head>
+        <title>Bakery</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/common.css">
+
+    </head>
+
+    <body>
+        <!-- Header-->
+        <header>
+            <img src="img/logo.png" alt="Bakery" width="150px" height="150px">
+
+            <!--Navigazione-->
+            <nav>
+                <ul>
+                    <li><a href="#chi_siamo">Chi siamo</a></li>
+                    <li><a href="#vantaggi">Vantaggi</a></li>
+                    <li><a href="#contattaci">Contattaci</a></li>
+                </ul>
+            </nav>
+        </header>        
+
+        <section id="hero">
+            <picture>
+                <source media="(min-width:990px)" srcset="img/top-d.jpg">
+                <img src="img/top-m.jpg" alt="Bakery" width="700" height="700">
+            </picture>
+            <div class="abs">
+                <h1>Benvenuti su Bakery</h1>
+            </div>
+        </section>
+
+        <!--Chi siamo-->
+        <section id="chi_siamo">
+            <h2>Chi siamo</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <a href="#contattaci" class="pulsante">Contattaci</a>
+        </section>
+
+        <!--Vantaggi-->
+        <section id="vantaggi">
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h2>Vantaggio 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="flex-item">
+                    <h2>Vantaggio 2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="flex-item">
+                    <h2>Vantaggio 3</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+        </section>
+
+        <!--Form-->
+        <section id="contattaci">
+            <h2>Contattaci</h2>
+            <form action="#" name="mioform" id="mioform">
+                <div class="carriera">                    
+                    <select name="cars" id="cars">
+                        <option disabled selected valure>Richiedi il tuo cupcake</option>
+                        <option value="cioccolato">Cioccolato + crema al burro d'arachidi</option>
+                        <option value="menta">Sciroppo di menta</option>
+                        <option value="tiramisù">Tiramisù</option>
+                        <option value="albicocche">Confettura di albicocche</option>
+                        <option value="lamponi">Crema al burro ai lamponi</option>
+                    </select>
+                </div>                     
+                <div class="flex-form">      
+                    <div class="inputDiv">
+                        <label class="left" for="nome">Nome*</label>
+                        <input type="text" name="nome" id="nome" class="controllo" required placeholder="Scrivi qui il tuo nome">
+                    </div>
+                    <div class="inputDiv">
+                        <label class="left" for="email">Email*</label>
+                        <input type="email" name="email" id="email" class="controllo" required placeholder="Scrivi qui la tua email">
+                    </div>
+                    <div class="textareaDiv">
+                        <label for="testoform">Messaggio*</label>
+                        <textarea name="testoForm" id="testoForm" class="controllo" required placeholder="Scrivi qui il tuo messaggio"></textarea>
+                    </div>
+                    <div class="privacy">
+                        <p>ACCONSENTI CHE I TUOI DATI PERSONALI VENGANO TRATTATI PER LE FINALITA' DI CUI AL PUNTO a) ?</p>                                                  
+                        <div class="radio">
+                            <input type="radio" id="edit-privacy-si" value="si" name="privacy" required>
+                            <label for="edit-privacy-si">SI</label>
+                        </div>
+                        <div class="radio">                            
+                            <input type="radio" id="edit-privacy-no" value="no" name="privacy">
+                            <label for="edit-privacy-no">NO</label>
+                        </div>                                            
+                    </div>
+                    <div class="inputDiv">
+                        <input type="submit" id="go" name="go" value="Invia" class="pulsante">
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!--Footer-->
+        <footer>
+            <p>
+                Edgemony srl P.Iva 123456 - Credits <a href="https://www.linkedin.com/in/chiara-zuccaro/" target="_blank" class="credits">Chiara Zuccaro</a>
+            </p>            
+        </footer>
+
+        <div class="tornasu">
+            <a href="#">Vai sù</a>
+        </div>
+
+        <script type="text/javascript" src="https://scrollmagic.io/scrollmagic/uncompressed/ScrollMagic.js"></script>
+        <script>
+            // init controller
+            var controller = new ScrollMagic.Controller();
+
+            // build scenes
+            new ScrollMagic.Scene({triggerElement: "#hero"})
+                .setClassToggle("#hero", "active") // add class toggle
+                .addTo(controller);
+
+            // build scenes
+            new ScrollMagic.Scene({triggerElement: "#chi_siamo"})
+            .setClassToggle("#chi_siamo", "active") // add class toggle
+            .addTo(controller);
+
+            // build scenes
+            new ScrollMagic.Scene({triggerElement: "#vantaggi"})
+            .setClassToggle("#vantaggi", "active") // add class toggle
+            .addTo(controller);
+
+            // build scenes
+            new ScrollMagic.Scene({triggerElement: "#contattaci"})
+            .setClassToggle("#contattaci", "active") // add class toggle
+            .addTo(controller);
+            
+        </script>
+    </body>
+</html>
