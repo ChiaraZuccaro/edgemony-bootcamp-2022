@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18-03-22</title>
+
+    <link rel="stylesheet" href="css/film.css">
+</head>
+<body>
+    <header>
+        <h1>Characters' finder</h1>
+        <div id="search-bar">
+            <input id="search" type="text" placeholder="Search here ...">
+            <button id="submit">Go</button>
+        </div>
+    </header>
+
+
+    <div class="new-char">
+        <h3 for="add">Add a new character!</h3>
+        <div class="n-m-i">
+            <div class="wrap-input">
+                <label for="name">Name:</label>
+                <input type="name" id="name" class="add-input" placeholder="how is/are he/she/them called?">
+            </div>
+            
+            <div class="wrap-input">
+                <label for="movie">Movie:</label>
+                <input type="text" id="movie" class="add-input" placeholder="what movie is/are he/she/they in?">
+            </div>
+
+            <div class="wrap-input">                    
+                <label for="url">Insert an image:</label>
+                <input type="text" id="url" class="add-input" placeholder="here your url ...">
+            </div>
+        </div>
+        
+        <button type="submit" id="plus">Add+</button>
+    </div>
+    
+    <div id="no-results">
+        <h4 class="none">We don't have what you are searching :( </h4>
+    </div>
+
+    <ul class="characters"></ul>
+
+    
+    
+    <footer>
+        <p>Esercitazione 18-03-22 by <a href="https://www.linkedin.com/in/chiara-zuccaro/">Chiara Zuccaro</a></p>
+    </footer>
+    <script src="js/renderList.js"></script>
+    <script src="js/addCharacter.js"></script>
+</body>
+</html>
