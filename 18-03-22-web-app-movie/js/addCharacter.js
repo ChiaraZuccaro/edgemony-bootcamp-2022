@@ -6,7 +6,7 @@ const wiki = q("#wiki");
 const addCharacter = 
 
 q("#plus").addEventListener("click", () => {
-    if (char.value !== "" || movie.value !== "" && url.value !== "" && wiki.value !== "") {
+    if (char.value !== "" && movie.value !== "" && url.value !== "" && wiki.value !== "") {
         characters.push({
             name: `${char.value}`,
             movie: `${movie.value}`,
