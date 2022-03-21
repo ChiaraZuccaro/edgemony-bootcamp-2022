@@ -1,0 +1,67 @@
+<!--                  ESERCITAZIONE 21-03-22
+                         NON RISOLTO -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="rubric.css">
+</head>
+<body>
+    <header>
+        <h1>La tua rubrica</h1>
+    </header>
+    <div class="wrapper">
+        <ul class="person-list"></ul>
+        <div class="add-remove">
+            <div id="add"> <!--ADD-->
+                <div class="labels">
+                    <label for="name">Nome: </label>
+                    <input type="name" id="name" placeholder="scrivi qui il nome ..." required>
+                </div>
+                <div class="labels">            
+                    <label for="surname">Cognome: </label>
+                    <input type="text" id="surname" placeholder="scrivi qui il cognome ..." required>
+                </div>
+                <div class="labels">
+                    <label for="phone">Telefono: </label>
+                    <input type="tel" id="phone" placeholder="scrivi qui il numero ..." required>
+                </div>
+                <div class="labels">
+                    <p>Lo salvo come preferito?</p>
+                    <div id="radio">
+                        <label for="saves-yes">Si</label>
+                        <input type="radio" id="saves-yes" name="saves">
+                        <label for="saves-no">No</label>
+                        <input type="radio" id="saves-no" name="saves">
+                    </div>
+                </div>
+                <button id="add-btn">Aggiungi contatto</button>
+            </div>
+            <div id="remove"> <!--REMOVE--> 
+                <ul class="list-remove">
+                    <div id="rem-check">
+                        <button class="rem-btn">Conferma</button>
+                    </div>
+                </ul>
+                <p id="output"></p>                 
+                <div class="labels">
+                    <label for="search">Inserisci il nome del contatto da eliminare: </label>
+                    <input type="text" id="search" placeholder="scrivilo qui ...">
+                </div>
+                <button id="remove-btn">Rimuovi contatto</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Esercitazione 21-03-2022 (Edgemony)</p>
+    </footer>
+    <script src="js/rubrica.js"></script>
+    <script src="js/delete.js"></script>
+</body>
+</html>

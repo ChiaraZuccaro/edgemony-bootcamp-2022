@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bungee&family=Hubballi&family=Patrick+Hand&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    text-align: center;
+    /* font-family: 'Hubballi', cursive; */
+    font-family: 'Patrick Hand', cursive;
+    background-color: burlywood;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+
+
+
+header {
+    width: 100%;
+    margin: 10px;
+    font-family: 'Bungee', cursive;
+    font-size: 25px;
+}
+
+
+
+
+
+.wrapper {
+    width: 100%;
+    margin: 20px 0;
+}
+.wrapper li {
+    list-style: none;
+}
+.wrapper .person-list {
+    margin: 10px auto;
+    font-size: 23px;
+}
+.wrapper .add-remove {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px;
+    font-family: 'Hubballi', cursive;
+}
+.wrapper .add-remove #add {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    row-gap: 15px;
+    padding: 0 50px;
+}
+.wrapper .add-remove #add .labels {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.wrapper .add-remove #add .labels input {
+    -webkit-border-top-right-radius: 50px;
+    -webkit-border-bottom-right-radius: 50px;
+    -moz-border-radius-topright: 50px;
+    -moz-border-radius-bottomright: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: none;
+    padding: 0 20px;
+    /* font-family: 'Amatic SC', cursive; */
+}
+.wrapper .add-remove #add .labels #radio {
+    display: flex;
+    flex-direction: row;
+}
+.wrapper .add-remove #add .labels #radio input {
+    align-self: center;
+    margin: 0 40px 0 3px;
+}
+.wrapper .add-remove button {
+    width: 200px;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-family: 'Hubballi', cursive;
+    font-size: 15px;
+    cursor: pointer;
+}
+.wrapper .add-remove button:hover {
+    color: black;
+    background-color: white;
+    border: 1px black solid;
+}
+.wrapper .add-remove #remove {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    row-gap: 15px;
+    align-self: end;
+    padding: 0 40px;
+}
+.wrapper .add-remove #remove .labels {
+    display: flex;
+    flex-direction: column;    
+}
+.wrapper .add-remove #remove .labels input {
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+.wrapper .add-remove #remove .list-remove .rem-btn {
+    display: none;
+}
+.wrapper .add-remove #remove .list-remove .on .rem-btn {
+    display: block;
+}
+
+
+
+
+
+
+footer {
+    width: 100%;
+    font-size: 15px;
+}
