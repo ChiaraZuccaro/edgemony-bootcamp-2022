@@ -73,14 +73,10 @@ q("#add-btn").addEventListener("click", () => {
     name.value = "";
     surname.value = "";
     phone.value = "";
+    
 
 
     visualList();
 });
 
 visualList();
-
-
-
-
-

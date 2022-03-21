@@ -130,6 +130,12 @@ header a {
     margin: 10px auto;
 }
 
+.cards {
+    background-color: white;
+    border-radius: 30px;
+    width: 25%;
+    margin: 10px auto;
+}
 
 
 

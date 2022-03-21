@@ -43,7 +43,7 @@ const newList = () => {
 }
 
 
-q("#remove-btn").addEventListener("click", () => {    
+q("#remove-btn").addEventListener("click", () => {  
     if (inputRemove.value !== "") {
         newList();        
     }
