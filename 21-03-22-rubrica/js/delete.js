@@ -1,45 +1,57 @@
 const inputRemove = q("#search");
 const output = q("#output");
-const btn = q(".rem-btn");
+const btn = q("#rem-btn");
 const radioButtons = document.querySelectorAll('input[name="rem"]');
 
 const newList = () => {
-    const searchList = arrayObj.filter((person) => person.name.toLowerCase().includes(inputRemove.value));   
-        
+    const searchList = arrayObj.filter((person) => person.name.toLowerCase() == inputRemove.value);
+    console.log(searchList);
     const searchListHTML = searchList.map((person) =>
         `<li>
-        <p>Sei sicuro di voler eliminare ${person.name} ${person.surname} ?</p>
-        <div id="radio">
-            <label for="rem-yes">Si</label>
-            <input type="radio" id="rem-yes" name="rem" value="yes">
-            <label for="rem-no">No</label>
-            <input type="radio" id="rem-no" name="rem" value="no">
-        </div>            
+        <p>Sei sicuro di voler eliminare ${person.name} ${person.surname} ?</p>            
         </li>`
     );
+    document.getElementById("rem-check").classList.add("on");
+    q(".list-remove").innerHTML = searchListHTML.join("");
+    btn.addEventListener("click", () => {
+        let ans = 0;
+        for (const radioButton of radioButtons ) {
+            if (radioButton.checked) {
+                ans = radioButton.value;
+                break;
+            }
+        }
+        document.getElementById("rem-check").classList.remove("on");
+        if (ans == "Yes") {
 
-    return searchListHTML.join("");
+            for(let i = 0; i < arrayObj.length; i++) {
+                console.log("dentro il for");
+                if (arrayObj[i].name == searchList[0].name) {
+                    arrayObj.splice(i, 1);
+                    console.log(i, "index");
+                }
+            }
+            q("#output").textContent = "Hai rimosso il contatto con successo!";
+
+            visualList();
+            localStorage.setItem("rubric", JSON.stringify(arrayObj));
+        } else {
+            q("#output").textContent = "Non hai rimosso nulla";
+        }
+        q(".list-remove").textContent = "";
+    });
 }
 
 
-q("#remove-btn").addEventListener("click", () => {
+q("#remove-btn").addEventListener("click", () => {    
     if (inputRemove.value !== "") {
-        q(".list-remove").innerHTML = newList();
-        q("#rem-check").classList.toggle("on");
-        btn.addEventListener("click", () => {
-            let ans;
-            for (const radioButton of radioButtons) {
-                if (radioButton.checked) {
-                    ans = radioButton.value;
-                    break;
-                }
-            }
-            console.log(ans);
-        });
+        newList();        
     }
     else {
         alert("Non hai inserito i valori correttamente!");
     }
     
+    inputRemove.value = "";
+
     visualList();
 });

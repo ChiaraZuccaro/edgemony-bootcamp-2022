@@ -22,6 +22,10 @@ header {
     font-family: 'Bungee', cursive;
     font-size: 25px;
 }
+header a {
+    text-decoration: none;
+    color: black;
+}
 
 
 
@@ -108,16 +112,22 @@ header {
     display: flex;
     flex-direction: column;    
 }
+.wrapper .add-remove #remove #search::placeholder {
+    text-align: center;
+}
 .wrapper .add-remove #remove .labels input {
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
 }
-.wrapper .add-remove #remove .list-remove .rem-btn {
+.wrapper .add-remove #remove .rem-btn {
     display: none;
 }
-.wrapper .add-remove #remove .list-remove .on .rem-btn {
+.wrapper .add-remove #remove .on .rem-btn {
     display: block;
+}
+.wrapper .add-remove #remove .on #rem-btn {
+    margin: 10px auto;
 }
 
 

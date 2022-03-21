@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <h1>La tua rubrica</h1>
+        <a href="index.html"><h1>La tua rubrica</h1></a>
     </header>
     <div class="wrapper">
         <ul class="person-list"></ul>
@@ -35,19 +35,24 @@
                     <p>Lo salvo come preferito?</p>
                     <div id="radio">
                         <label for="saves-yes">Si</label>
-                        <input type="radio" id="saves-yes" name="saves">
+                        <input type="radio" id="saves-yes" name="saves" value="true">
                         <label for="saves-no">No</label>
-                        <input type="radio" id="saves-no" name="saves">
+                        <input type="radio" id="saves-no" name="saves" value="false">
                     </div>
                 </div>
                 <button id="add-btn">Aggiungi contatto</button>
             </div>
             <div id="remove"> <!--REMOVE--> 
-                <ul class="list-remove">
-                    <div id="rem-check">
-                        <button class="rem-btn">Conferma</button>
+                <ul class="list-remove"></ul>                
+                <div id="rem-check">
+                    <div class="rem-btn">
+                        <label for="rem-yes">Si</label>
+                        <input type="radio" id="rem-yes" name="rem" value="Yes">
+                        <label for="rem-no">No</label>
+                        <input type="radio" id="rem-no" name="rem" value="No">
                     </div>
-                </ul>
+                    <button class="rem-btn" id="rem-btn">Conferma</button>
+                </div>
                 <p id="output"></p>                 
                 <div class="labels">
                     <label for="search">Inserisci il nome del contatto da eliminare: </label>
