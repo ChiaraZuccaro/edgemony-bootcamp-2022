@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inconsolata:wght@200&family=Indie+Flower&family=Roboto+Mono:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html {
+    box-sizing: border-box;
+}
+
+hr {
+    border: 1px rgb(126, 126, 126) solid;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(27, 27, 27);    
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 120px;
+}
+header a {
+    width: 50%;
+    text-decoration: none;
+    color: brown;
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    align-self: center;
+    padding: 10px 30px;
+    animation-name: title;
+    animation-duration: 1.3s;
+}
+header #search-bar {
+    width: 50%;
+    height: 40px;
+    align-self: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: end;
+    margin: 0 25px;
+}
+header #search-bar #search {
+    border: none;
+    -webkit-border-top-left-radius: 90px;
+    -webkit-border-bottom-left-radius: 90px;
+    -moz-border-radius-topleft: 90px;
+    -moz-border-radius-bottomleft: 90px;
+    border-top-left-radius: 90px;
+    border-bottom-left-radius: 90px;
+    background-color: bisque;
+    font-size: 15px;
+    font-family: monospace;
+    padding: 10px 40px 10px 15px;
+    margin: 0;
+    color: rgb(0, 0, 0);
+}
+header #search-bar #search::placeholder {
+    color: rgb(0, 0, 0);
+    opacity: 0.5;
+}
+header #search-bar #submit {
+    border: none;
+    -webkit-border-top-right-radius: 90px;
+    -webkit-border-bottom-right-radius: 90px;
+    -moz-border-radius-topright: 90px;
+    -moz-border-radius-bottomright: 90px;
+    border-top-right-radius: 90px;
+    border-bottom-right-radius: 90px;
+    padding: 10px 20px 10px 20px;
+    margin: 0;
+    font-family: 'Indie Flower', cursive;
+    letter-spacing: 1px;
+    background-color: black;
+    color: antiquewhite;
+}
+header #search-bar #submit:hover {
+    color: black;
+    background-color: white;
+    border: 1px black solid;
+}
+
+/* Add style */
+.new-char {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    color: white;
+    text-align: center;
+    color: brown;
+}
+.new-char .n-m-i {
+    display: inline-flex;
+    justify-content: space-around;
+    column-gap: 50px;
+}
+.new-char .n-m-i .wrap-input {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+}
+.new-char .n-m-i .add-input {
+    text-align: center;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    width: 250px;
+    background-color: bisque;
+}
+.new-char button {
+    width: 100px;
+    background-color: bisque;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+/* End */
+
+
+#star-wars {
+    width: 100%;
+    margin: 30px;
+    display: grid;    
+    grid-template-columns: repeat(auto-fill, minmax(0px, 380px));
+    gap: 50px;
+}
+#star-wars li {
+    list-style: none;
+}
+#star-wars .cards {
+    list-style: none;
+    width: 100%;
+    height: 100px;
+    margin: 0px;
+    padding: 10px;
+    background-color: bisque;
+    border-radius: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;    
+    text-decoration: none;
+    color: rgb(27, 27, 27);
+    transition: all 0.3s cubic-bezier(0.4, -0.16, 0.88, 1.36);
+}
+#star-wars .cards:hover {
+    border: 1px bisque solid;
+    background-color: brown;
+    color: bisque;
+    -webkit-box-shadow: inset 5px 5px 10px 0px #000000; 
+    box-shadow: inset 5px 5px 10px 0px #000000;
+}
+#star-wars .cards:hover > img {
+    border: 1px bisque solid;
+}
+#star-wars .cards img {
+    border-radius: 50px;
+}
+#star-wars .cards .charac-movie {
+    padding-left: 15px;
+    align-self: center;
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 15px;
+}
+#star-wars .cards .charac-movie h2 {
+    width: 200px;
+}
+#star-wars li span {
+    font-size: 20px;
+}
+
+
+/* Stile film non trovato */
+.none {
+    display: none;
+}
+.change .none {
+    display: block;
+    width: 70%;
+    margin: 40px auto;
+    padding: 10px;
+    font-size: 40px;
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    background-color: bisque;
+    border: 1px rgb(184, 184, 184) solid;
+    border-radius: 30px;
+}
+/* fine*/
+
+/* Stile elemento trovato */
+#star-wars .find {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 200px;
+    border: 1px rgb(40, 255, 136) solid;
+    border-radius: 30px;
+    margin: 0 auto;
+    padding: 20px 30px 20px 40px;
+    background-color: beige;
+}
+/* Fine stile elemento trovato*/
+
+
+footer {
+    background-color: bisque;
+    text-align: center;
+    height: auto;
+    width: 100%;
+}
+footer p {
+    margin: 10px auto;
+    padding: 20px;
+}
+footer a {
+    text-decoration: none;
+    color: black;
+}
+footer a:hover {
+    text-decoration: underline;
+    color: rgb(95, 95, 95);
+}
+
+
+@keyframes title {
+    0% {
+        opacity: 0;
+        position: relative;
+        left: 30px;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}

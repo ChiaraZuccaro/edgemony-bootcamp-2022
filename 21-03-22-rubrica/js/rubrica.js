@@ -1,5 +1,5 @@
 //                    ESERCITAZIONE 21-03-22
-//                          NON RISOLTO
+//       
 // const rubric = [
 //         {
 //             name: "Robert",

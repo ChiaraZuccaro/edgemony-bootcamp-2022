@@ -31,12 +31,14 @@ const newList = () => {
                     console.log(i, "index");
                 }
             }
+            
             q("#output").textContent = "Hai rimosso il contatto con successo!";
-
+            setTimeout(() => q("#output").textContent = "", 6000);
             visualList();
             localStorage.setItem("rubric", JSON.stringify(arrayObj));
         } else {
             q("#output").textContent = "Non hai rimosso nulla";
+            setTimeout(() => q("#output").textContent = "", 6000);
         }
         q(".list-remove").textContent = "";
     });
