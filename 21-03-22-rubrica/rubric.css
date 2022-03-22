@@ -39,8 +39,11 @@ header a {
     list-style: none;
 }
 .wrapper .person-list {
-    margin: 10px auto;
+    margin: 10px 30px;
     font-size: 23px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 280px));
+    gap: 0px;
 }
 .wrapper .add-remove {
     display: flex;
@@ -133,8 +136,9 @@ header a {
 .cards {
     background-color: white;
     border-radius: 30px;
-    width: 25%;
-    margin: 10px auto;
+    width: 200px;
+    padding: 5px 10px;
+    margin: 5px auto;
 }
 
 
