@@ -33,19 +33,20 @@ const newList = () => {
             }
             
             q("#output").textContent = "Hai rimosso il contatto con successo!";
-            setTimeout(() => q("#output").textContent = "", 6000);
+            setTimeout(() => q("#output").textContent = "", 4000);
             visualList();
             localStorage.setItem("rubric", JSON.stringify(arrayObj));
         } else {
             q("#output").textContent = "Non hai rimosso nulla";
-            setTimeout(() => q("#output").textContent = "", 6000);
+            setTimeout(() => q("#output").textContent = "", 4000);
         }
         q(".list-remove").textContent = "";
     });
 }
 
 
-q("#remove-btn").addEventListener("click", () => {  
+q("#remove-btn").addEventListener("click", () => { 
+    setTimeout(() => fieldResetRemove(), 100); 
     if (inputRemove.value !== "") {
         newList();        
     }
