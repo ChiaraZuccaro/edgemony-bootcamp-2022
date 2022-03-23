@@ -33,7 +33,7 @@ header h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 100px;
     font-family: 'Bebas Neue', cursive;
 }
 #nav-bar p {    
@@ -43,6 +43,38 @@ header h1 {
     background-color: black;
     color: bisque;
     cursor: pointer;
+    border-radius: 5px;
+}
+
+
+/* PRODOTTO ELIMINATO */
+.erased {
+    display: block;
+    margin: auto auto;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+
+
+
+/* PULSANTE TORNA INDIETRO */
+.none {
+    display: none;
+}
+.on .none {    
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: bisque;
+    font-family: 'Kanit', sans-serif;
+}
+.on .none:hover {
+    background-color: black;
+    color: bisque;
 }
 
 

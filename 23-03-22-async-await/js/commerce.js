@@ -2,7 +2,7 @@
 
 const q = (selector) => document.querySelector(selector);
 
-const formatMinText = (text) => text.split(" ").slice(0, 20).join(" ") + " ...";
+const formatMinText = (text) => text.split(" ").slice(0, 15).join(" ") + " ...";
 
 const createCard = (product) => {
     const h3El = document.createElement("h3");
@@ -35,4 +35,9 @@ const getApi = async () => {
     return await res.json();
 };
 
-export { createCard, getApi, q };
+const removeCard = () => {    
+    const divEl = document.querySelectorAll(".cards");
+    divEl.forEach((card) => q(".wrapper").removeChild(card));
+}
+
+export { createCard, getApi, q, removeCard };
