@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    height: 120px;
+    display: flex;     
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+header h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 50px;
+    align-self: center;
+}
+header button {
+    border: 1px black solid;
+    border-radius: 100px;
+    margin: 5px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: red;
+}
+
+
+
+
+
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px;
+}
+.middle form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 5px auto;
+}
+.middle form .genres {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    column-gap: 25px;
+}
+.middle button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+.middle .movies {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.middle .movies .cards {
+    width: 300px;
+    background-color: beige;
+    border: none;
+    border-radius: 30px;
+    text-align: center;
+}
+.middle .movies .cards .titlex {
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: 100px;
+    justify-content: end;
+    padding: 10px 20px;
+}
+
+
+
+
+
+
+
+
+
+footer {
+    text-align: center;
+    height: auto;
+    width: 100%;
+}
+footer p {
+    margin: 10px auto;
+    padding: 20px;
+}
