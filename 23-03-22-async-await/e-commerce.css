@@ -13,7 +13,7 @@ body{
     background-color: rgb(0, 47, 68);
 }
 
-
+/*              HEADER              */
 header {
     height: 120px;
     display: flex;     
@@ -26,7 +26,7 @@ header h1 {
     color: bisque;
 }
 
-
+/*              NAVBAR              */
 #nav-bar {
     background-color: bisque;
     font-size: 20px;
@@ -79,6 +79,7 @@ header h1 {
 
 
 
+
 .wrapper {
     padding: 20px 40px;
     display: flex;
@@ -118,6 +119,73 @@ header h1 {
 .wrapper .cards h5 {
     font-family: 'Bebas Neue', cursive;
     font-size: 30px;
+}
+/* ZOOM ON CARD */
+.hidden {
+    display: none;
+}
+.all {
+    position: fixed;
+    top: 150px;
+    width: 100%;
+    height: 100%;
+}
+.all #btn-zoom {    
+    display: block;
+    z-index: 3;
+    margin: 10px auto;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: bisque;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+}
+.all #btn-zoom:hover {
+    background-color: black;
+    color: bisque;
+}
+.all .cards {
+    background-color: rgb(255, 255, 255);
+    border: 1px black solid;
+    border-radius: 20px;
+    width: 800px;
+    height: 600px;
+    padding: 20px;
+    margin: 0 auto;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; */
+}
+.all .cards h3 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 28px;
+    text-align: center;
+}
+.all .cards img {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 50px 30px;
+    float: left;
+}
+.all .cards h6 {
+    display: none;
+}
+.all .cards p {
+    width: 350px;
+    font-size: 19px;
+    position: relative;
+    top: -250px;
+    left: 420px;
+}
+.all .cards h5 {
+    position: relative;
+    top: -180px;
+    left: 420px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 40px;
 }
 
 

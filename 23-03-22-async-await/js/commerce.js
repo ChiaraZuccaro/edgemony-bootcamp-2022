@@ -24,7 +24,7 @@ const createCard = (product) => {
     imgEl.setAttribute("height","auto");
     imgEl.setAttribute("alt","product's image");
 
-    divEl.append(h3El, categoryEl, descEl, imgEl, priceEl);
+    divEl.append(h3El, categoryEl, imgEl, descEl, priceEl);
     divEl.classList.add("cards");
 
     q(".wrapper").appendChild(divEl);
@@ -40,4 +40,20 @@ const removeCard = () => {
     divEl.forEach((card) => q(".wrapper").removeChild(card));
 }
 
-export { createCard, getApi, q, removeCard };
+//           CARICAMENTO DEI PRODOTTI
+const productList = [];
+getApi().then((data) => {
+    for(let i = 0; i < data.length; i++) {
+        productList.push(data[i]);
+    }
+    console.log("caricati");
+});
+
+setTimeout(() => {
+    for (let i = 0; i < productList.length; i++) {    
+        createCard(productList[i]);
+    }
+    console.log(productList);
+}, 10000)
+
+export { createCard, q, removeCard, productList };

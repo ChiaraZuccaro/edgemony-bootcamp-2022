@@ -1,18 +1,5 @@
-import { createCard, getApi, q, removeCard } from "./commerce.js"; 
+import { createCard, q, removeCard, productList } from "./commerce.js"; 
 
-const productList = [];
-getApi().then((data) => {
-    for(let i = 0; i < data.length; i++) {
-        productList.push(data[i]);
-    }
-    console.log("caricati");
-});
-
-setTimeout(() => {
-    for (let i = 0; i < productList.length; i++) {    
-        createCard(productList[i]);
-    }
-}, 5000)
 
 
 //                            CONSEGNA RICHIESTA
