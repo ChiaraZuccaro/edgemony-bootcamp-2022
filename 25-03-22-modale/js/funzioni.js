@@ -1,0 +1,166 @@
+//                              FUNZIONI ESERCITAZIONE 25-03-22
+
+const q = (selector) => document.querySelector(selector);
+
+const pageError = () => {
+    const h1Err = document.createElement("h1");
+    const imgErr = document.createElement("img");
+    const divErr = document.createElement("div");
+
+    h1Err.textContent = "Pagina non trovata! ";
+    imgErr.setAttribute("src", "https://cdn.iconscout.com/icon/free/png-256/cry-face-sad-tear-emoji-37717.png");
+    imgErr.setAttribute("alt", "image error");
+
+    divErr.append(h1Err, imgErr);
+    document.body.appendChild(divErr);
+}
+
+const zoomMov = (card) => {
+    q(".all-info").classList.remove("hidden");
+    q(".zoom-card").innerHTML = `${card.outerHTML}`;    
+    q(".black-layer").classList.remove("hidden");
+    
+    q(".black-layer").addEventListener("click", () => {
+        q(".black-layer").classList.add("hidden");
+        console.log(card);
+        q(".zoom-card").removeChild(q(".cards"));
+    });
+}
+
+const createCard = (movie) => {
+    const h3El = document.createElement("h3");
+    const descEl = document.createElement("p");
+    const imgEl = document.createElement("img");
+    const genresEl = document.createElement("h6");
+    const yearEl = document.createElement("h5");
+    const numbEl = document.createElement("p");
+    const divEl = document.createElement("div");
+    const divUnder = document.createElement("div");
+    const divChoice = document.createElement("div");
+    const divAll = document.createElement("div");
+
+
+    h3El.textContent = `${movie.title}`;
+    for(let i = 0; i < movie.genres.length; i++) {
+        genresEl.textContent = `${movie.genres[i].toUpperCase()}`;
+    }
+    descEl.textContent = `${movie.description}`;
+    yearEl.textContent = `${movie.year}`;
+    numbEl.textContent = `${movie.id}`;
+
+
+    imgEl.setAttribute("src",`${movie.poster}`);
+    imgEl.setAttribute("width","150px");
+    imgEl.setAttribute("height","auto");
+    imgEl.setAttribute("alt","movie's image");
+
+    divChoice.classList.add("new-choice");
+
+    divAll.classList.add("all-info");
+    divAll.append( h3El, imgEl, genresEl, descEl, divUnder);
+
+    divUnder.classList.add("under-card");
+    divUnder.append( yearEl, numbEl);
+
+    divEl.append( divChoice, divAll);
+    divEl.classList.add("cards");
+
+    q(".movies").appendChild(divEl);
+};
+
+const getNew = () => {
+    const title = q("#title").value;
+    const description = q("#description").value;
+    const year = q("#year").value;
+    const poster = q("#poster").value;
+    const genreEls = document.getElementsByName("genres");
+    const genres = [];
+    let movies = {};
+
+
+    for(let i = 0; i < genreEls.length; i++) {
+        if(genreEls[i].checked) {
+            genres.push(genreEls[i].value);
+        }
+    }
+
+    return movies = {
+        title: title,
+        description: description,
+        year: year,
+        poster: poster,
+        genres: genres
+    }
+}
+
+const getApi = async () => {
+    const res = await fetch("https://edgemony-backend.herokuapp.com/movies", {
+        method: "GET",
+        headers: {
+            "Content-Type" : "application/json",
+        }
+    })
+    
+
+    if (res.status >= 200 && res.status <= 299) {
+        return await res.json();
+    }
+    else {
+        pageError();
+    }
+}
+
+const deleteCard = (card, index) => {    
+    console.log(card);
+
+    fetch(`https://edgemony-backend.herokuapp.com/movies/${index}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type" : "application/json",
+        },
+    });
+
+    setTimeout(() => card.innerHTML = `<h2 class="erased">Film cancellato</h2>`, 2000);
+    q(".movies").removeChild(card);
+};
+
+const choiceCard = (card) => {
+    const radioChoices = document.querySelectorAll('input[name="choice"]');
+    console.log(card.outerHTML.split("<div>").slice(4, 7));
+    const choiceSection = document.getElementsByClassName("new-choice");
+    let ans;
+
+    console.log("dentro il choice");
+    choiceSection.innerHTML = `
+    <div class="choice-section">
+        <span>Come desideri procedere?</span>
+        <div class="choice">
+            <div class="user-choice">                    
+                <label for="delete">Elimina film</label>
+                <input type="radio" id="delete" name="choice" value="delete">
+            </div>
+            <div class="user-choice">                
+                <input type="radio" id="zomm" name="choice" value="zoom">
+                <label for="zoom">Espandi</label>
+            </div>
+        </div>
+    </div>
+    `;
+    q(".all-info").classList.add("hidden");
+
+    // for (const radioChoice of radioChoices) {
+    //     if(radioChoice.checked) {
+    //         ans = radioChoice.value;
+    //         console.log(ans + "ciao");
+    //         break;
+    //     }
+    // }
+
+    if (ans === "delete") {
+        deleteCard(card, index);
+    }
+    else zoomMov(card);
+}
+
+
+export { q, zoomMov, createCard, getNew, getApi, deleteCard, choiceCard }

@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Inconsolata:wght@200&family=Ramaraja&family=Red+Hat+Mono:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Ramaraja', serif;
+}
+
+header h1 {
+    font-family: 'Dela Gothic One', cursive;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+
+
+/*                     FORM                */
+.user-add {
+    display: block;
+    font-family: 'Red Hat Mono', monospace
+}
+.user-add form {
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 10px;
+    background-color: rgb(211, 190, 164);
+    padding: 10px 30px;
+    border-radius: 30px;
+}
+.user-add form button {
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: antiquewhite;
+    font-family: 'Red Hat Mono', monospace;
+}
+.user-add form button:hover {
+    background-color: black;
+    color: white;
+    font-family: 'Dela Gothic One', cursive;
+}
+.user-add form .user {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    align-items: center;
+}
+.user-add form .user input {
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: antiquewhite;
+    border: none;
+}
+.user-add form .genres {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 10px;
+}
+.user-add form .genres .check-flex {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 25px;
+}
+.user-add form .genres .check-flex .user-check {
+    display: flex;
+    flex-direction: row;
+}
+.user-add form .genres .check-flex .user-check input {
+    align-self: center;
+    margin: 0 5px;
+}
+/*                       FINE Form                     */
+
+
+
+
+
+
+
+
+
+/* Layer oscurante */
+.hidden {
+    display: none;
+}
+.black-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.5;
+}
+/* FINE Layer oscurante */
+
+
+
+
+
+
+
+
+/*                       LISTA FILM                    */
+.movies {
+    margin: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px;
+    justify-content: center;
+}
+.movies .cards {
+    background-color: rgb(211, 190, 164);
+    width: 250px;
+    height: auto;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+.movies .cards .all-info {    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+}
+.movies .cards .all-info .under-card {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+.movies .cards img {
+    margin: 10px auto;
+}
+.cards h3 {
+    font-family: 'Dela Gothic One', cursive;
+    text-align: center;
+}
+.movies .cards p {
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+}
+.movies .cards h5 {
+    font-size: 25px;
+    justify-self: center;
+}
+.movies .cards h6 {
+    font-family: 'Red Hat Mono', monospace;
+    padding: 5px 20px;
+}
+/*                  FINE LISTA FILM                    */
+
+
+
+
+
+
+/*         SCELTA        */
+.choice-section {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 30px;
+}
+.choice-section span {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 15px;
+}
+.choice-section .choice {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.choice-section .choice .user-choice {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.choice-section .choice .user-choice input {
+    margin: 5px;
+}
+.choice-section .choice .user-choice label {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/*        FINE SCELTA    */
+
+
+
+
+
+/*              FILM ZOOMMATO               */
+.zoom-card {
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+.zoom-card .cards {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    background-color: antiquewhite;
+    width: 75vw;
+    height: 500px;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+.zoom-card .cards .all-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.zoom-card .cards .all-info h3 {
+    font-family: 'Dela Gothic One', cursive;
+}
+.zoom-card .cards p {
+    font-family: 'Roboto', sans-serif;
+    padding: 5px;
+}
+.zoom-card .cards h5 {
+    font-size: 25px;
+    justify-self: center;
+}
+.zoom-card .cards h6 {
+    font-family: 'Red Hat Mono', monospace;
+    align-self: flex-start;
+    padding: 5px;
+}
+/*             FINE FILM ZOOMMATO           */
+
+
+
+
+
+
+
+
+
+footer {
+    text-align: center;
+    height: auto;
+    width: 100%;
+}
+footer p {
+    margin: 10px auto;
+    padding: 20px;
+}

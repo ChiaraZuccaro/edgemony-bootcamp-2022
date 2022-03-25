@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="modale.css">
+</head>
+<body>
+    <header>
+        <h1>Film per tutti</h1>
+    </header>
+
+    <div class="user-add">
+        <form>
+            <div class="user">
+                <label for="title">Titolo: </label>
+                <input type="text" id="title" placeholder="qui il titolo...">
+            </div>
+            
+            <div class="user">
+                <label for="poster">Poster: </label>
+                <input type="text" id="poster" placeholder="inserisci un url ...">
+            </div>
+            
+            <div class="user">
+                <label for="year">Anno: </label>
+                <input type="text" id="year" placeholder="anno di produzione">
+            </div>
+
+            <div class="user">
+                <label for="description">Descrizione: </label>
+                <input type="text" id="description" placeholder="scrivi qui ...">
+            </div>
+            
+            <div class="genres">
+                <p>Genere: </p>
+                <div class="check-flex">
+                    <div class="user-check">                    
+                        <label for="horror">Horror</label>
+                        <input type="checkbox" id="horror" name="genres" value="Horror">
+                    </div>
+
+                    <div class="user-check">
+                        <label for="animazione">Animazione</label>
+                        <input type="checkbox" id="animazione" name="genres" value="Animazione">
+                    </div>
+
+                    <div class="user-check">                    
+                        <label for="fantasy">Fantasy</label>
+                        <input type="checkbox" id="fantasy" name="genres" value="Fantasy">
+                    </div>
+
+                    <div class="user-check">                    
+                        <label for="serieTV">Serie TV</label>
+                        <input type="checkbox" id="serieTV" name="genres" value="Serie TV">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" id="sub">Aggiungi</button>
+        </form>
+    </div>
+
+    <div class="black-layer hidden"></div>
+    <div class="zoom-card"></div>
+    <div class="movies"></div>
+
+    <footer>
+        <p>Esercitazione 25-03-22 (Edgemony)</p>
+    </footer>
+    
+    <script src="js/modale.js" type="module"></script>
+    <script src="js/funzioni.js" type="module"></script>
+</body>
+</html>
