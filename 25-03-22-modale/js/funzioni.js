@@ -149,7 +149,7 @@ const deleteCard = (card, index) => {
 
     card.innerHTML = `<h2 class="erased">Film cancellato</h2>`;
     console.log(card);
-    setTimeout(() => location.reload(), 1000);
+    setTimeout(() => location.reload(), 2000);
 };
 
 
@@ -187,6 +187,8 @@ const choiceCard = (card, list) => {
         </div>
         <button id="choice-btn">Conferma</button>
     `;
+    card.classList.remove("all-info");
+    card.classList.add("hidden");
 
     
     const radioChoices = document.querySelectorAll('input[name="choice"]');
@@ -205,6 +207,11 @@ const choiceCard = (card, list) => {
         } else if(ans === "zoom") {
             zoomMov(cardEl);
         }
+
+
+        choiceSel.item(indexCardEl - 1).innerHTML = "";
+        card.classList.add("all-info");
+        card.classList.remove("hidden");
     });    
 }
 

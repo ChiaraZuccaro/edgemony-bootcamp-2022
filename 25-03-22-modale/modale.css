@@ -162,34 +162,50 @@ header h1 {
 
 
 /*         SCELTA        */
-.choice-section {
+.cards .new-choice {
+    justify-content: center;
+}
+.new-choice {
     display: flex;
     flex-flow: column nowrap;
     gap: 30px;
+    margin: auto 0;
 }
-.choice-section span {
+.new-choice span {
     font-family: 'Dela Gothic One', cursive;
     font-size: 15px;
 }
-.choice-section .choice {
+.new-choice .choice {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
 }
-.choice-section .choice .user-choice {
+.new-choice .choice .user-choice {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
     width: 50%;
 }
-.choice-section .choice .user-choice input {
+.new-choice .choice .user-choice input {
     margin: 5px;
 }
-.choice-section .choice .user-choice label {
+.new-choice .choice .user-choice label {
     font-family: 'Roboto', sans-serif;
 }
-
+.new-choice button {
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: antiquewhite;
+    font-family: 'Red Hat Mono', monospace;
+}
+.new-choice button:hover {
+    background-color: black;
+    color: white;
+    font-family: 'Dela Gothic One', cursive;
+}
 
 /*        FINE SCELTA    */
 
