@@ -15,14 +15,43 @@ const pageError = () => {
     document.body.appendChild(divErr);
 }
 
-const zoomMov = (card) => {
-    q(".all-info").classList.remove("hidden");
-    q(".zoom-card").innerHTML = `${card.outerHTML}`;    
+const zoomMov = (cardObj) => {
+    const h3ElZoom = document.createElement("h3");
+    const descElZoom = document.createElement("p");
+    const imgElZoom = document.createElement("img");
+    const genresElZoom = document.createElement("h6");
+    const yearElZoom = document.createElement("h5");
+    const numbElZoom = document.createElement("p");
+    const divElZoom = document.createElement("div"); 
+
+
+    cardObj.map((movie) => {
+        h3ElZoom.textContent = `${movie.title}`;
+        // for(let i = 0; i < cardObj.genres.length; i++) {
+        //     genresElZoom.textContent = `${cardObj.genres[i].toUpperCase()}`;
+        // }
+        descElZoom.textContent = `${movie.description}`;
+        yearElZoom.textContent = `${movie.year}`;
+        numbElZoom.textContent = `${movie.id}`;
+
+
+
+        imgElZoom.setAttribute("src",`${movie.poster}`);
+        imgElZoom.setAttribute("width","150px");
+        imgElZoom.setAttribute("height","auto");
+        imgElZoom.setAttribute("alt","movie's image");
+
+
+        divElZoom.classList.add("cards");
+        divElZoom.append( h3ElZoom, genresElZoom, imgElZoom, descElZoom, yearElZoom, numbElZoom);
+    });
+
+    
+    q(".zoom-card").appendChild(divElZoom);
     q(".black-layer").classList.remove("hidden");
     
     q(".black-layer").addEventListener("click", () => {
         q(".black-layer").classList.add("hidden");
-        console.log(card);
         q(".zoom-card").removeChild(q(".cards"));
     });
 }
@@ -111,8 +140,6 @@ const getApi = async () => {
 }
 
 const deleteCard = (card, index) => {    
-    console.log(card);
-
     fetch(`https://edgemony-backend.herokuapp.com/movies/${index}`, {
         method: "DELETE",
         headers: {
@@ -120,46 +147,65 @@ const deleteCard = (card, index) => {
         },
     });
 
-    setTimeout(() => card.innerHTML = `<h2 class="erased">Film cancellato</h2>`, 2000);
-    q(".movies").removeChild(card);
+    card.innerHTML = `<h2 class="erased">Film cancellato</h2>`;
+    console.log(card);
+    setTimeout(() => location.reload(), 1000);
 };
 
-const choiceCard = (card) => {
-    const radioChoices = document.querySelectorAll('input[name="choice"]');
-    console.log(card.outerHTML.split("<div>").slice(4, 7));
-    const choiceSection = document.getElementsByClassName("new-choice");
+
+
+const choiceCard = (card, list) => {
+    const choiceSel = document.querySelectorAll(".new-choice");   
+    const cardEl = [];
     let ans;
 
-    console.log("dentro il choice");
-    choiceSection.innerHTML = `
-    <div class="choice-section">
+    
+    for ( let i = 0; i < list.length; i++) {
+        if(card.outerHTML.toLowerCase().split("").join("").includes(list[i].title.toLowerCase())) {
+            console.log("dentro if");
+            cardEl.push(list[i]);            
+            break;
+        }
+    }
+
+    
+    let indexCardEl;
+    cardEl.map((movie) => indexCardEl = movie.id);
+    
+
+    choiceSel.item(indexCardEl - 1).innerHTML = `
         <span>Come desideri procedere?</span>
         <div class="choice">
             <div class="user-choice">                    
-                <label for="delete">Elimina film</label>
+                <label for="delete">Elimina</label>
                 <input type="radio" id="delete" name="choice" value="delete">
             </div>
             <div class="user-choice">                
-                <input type="radio" id="zomm" name="choice" value="zoom">
+                <input type="radio" id="zoom" name="choice" value="zoom">
                 <label for="zoom">Espandi</label>
             </div>
         </div>
-    </div>
+        <button id="choice-btn">Conferma</button>
     `;
-    q(".all-info").classList.add("hidden");
 
-    // for (const radioChoice of radioChoices) {
-    //     if(radioChoice.checked) {
-    //         ans = radioChoice.value;
-    //         console.log(ans + "ciao");
-    //         break;
-    //     }
-    // }
+    
+    const radioChoices = document.querySelectorAll('input[name="choice"]');
 
-    if (ans === "delete") {
-        deleteCard(card, index);
-    }
-    else zoomMov(card);
+
+    q("#choice-btn").addEventListener("click", () => {
+        for (const radioChoice of radioChoices) {
+            if(radioChoice.checked) {
+                ans = radioChoice.value;
+                break;
+            }
+        }
+        console.log(ans);
+        if (ans === "delete") {
+            deleteCard(card, indexCardEl);
+        } else if(ans === "zoom") {
+            zoomMov(cardEl);
+        }
+    });    
 }
 
 

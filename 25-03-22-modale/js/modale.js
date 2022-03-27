@@ -1,20 +1,27 @@
-import { q, zoomMov, createCard, getNew, getApi, deleteCard, choiceCard } from "./funzioni.js";
+import { q, createCard, getNew, getApi, choiceCard } from "./funzioni.js";
 
-let indexMovie;
+const movieList = [];
 
 getApi()
-    .then((data) => data.map((movie) => {
-        createCard(movie);
-    }))
-    .then(() => {
-        const cardsEls = document.querySelectorAll(".cards");
-        cardsEls.forEach((card) => { 
-            card.addEventListener("click", () => {
-                choiceCard(card);
-            });
-        });    
-    });
+    .then((data) => {
+        for ( let i = 0; i < data.length; i++) {
+            movieList.push(data[i]);
+        }
+        console.log("salvati");
 
+        for ( let i = 0; i < data.length; i++) {
+            createCard(movieList[i]);
+        }
+    })
+    .then(() => {
+        const cardsEls = document.querySelectorAll(".all-info");
+
+        cardsEls.forEach((card) => {
+            card.addEventListener("click", () => {           
+                choiceCard(card, movieList);   
+            });
+        });
+});
 
 q("#sub").addEventListener("click", (event) => {
     event.preventDefault();
