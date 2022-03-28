@@ -2,6 +2,7 @@
 
 const q = (selector) => document.querySelector(selector);
 
+
 const pageError = () => {
     const h1Err = document.createElement("h1");
     const imgErr = document.createElement("img");
@@ -27,9 +28,9 @@ const zoomMov = (cardObj) => {
 
     cardObj.map((movie) => {
         h3ElZoom.textContent = `${movie.title}`;
-        // for(let i = 0; i < cardObj.genres.length; i++) {
-        //     genresElZoom.textContent = `${cardObj.genres[i].toUpperCase()}`;
-        // }
+        for(let i = 0; i < movie.genres.length; i++) {
+            genresElZoom.textContent = `${cardObj.genres[i].toUpperCase()}`;
+        }
         descElZoom.textContent = `${movie.description}`;
         yearElZoom.textContent = `${movie.year}`;
         numbElZoom.textContent = `${movie.id}`;
@@ -56,15 +57,14 @@ const zoomMov = (cardObj) => {
     });
 }
 
+
 const createCard = (movie) => {
     const h3El = document.createElement("h3");
     const descEl = document.createElement("p");
     const imgEl = document.createElement("img");
     const genresEl = document.createElement("h6");
     const yearEl = document.createElement("h5");
-    const numbEl = document.createElement("p");
     const divEl = document.createElement("div");
-    const divUnder = document.createElement("div");
     const divChoice = document.createElement("div");
     const divAll = document.createElement("div");
 
@@ -75,7 +75,6 @@ const createCard = (movie) => {
     }
     descEl.textContent = `${movie.description}`;
     yearEl.textContent = `${movie.year}`;
-    numbEl.textContent = `${movie.id}`;
 
 
     imgEl.setAttribute("src",`${movie.poster}`);
@@ -86,10 +85,7 @@ const createCard = (movie) => {
     divChoice.classList.add("new-choice");
 
     divAll.classList.add("all-info");
-    divAll.append( h3El, imgEl, genresEl, descEl, divUnder);
-
-    divUnder.classList.add("under-card");
-    divUnder.append( yearEl, numbEl);
+    divAll.append( h3El, imgEl, genresEl, descEl, yearEl);
 
     divEl.append( divChoice, divAll);
     divEl.classList.add("cards");
@@ -139,6 +135,7 @@ const getApi = async () => {
     }
 }
 
+
 const deleteCard = (card, index) => {    
     fetch(`https://edgemony-backend.herokuapp.com/movies/${index}`, {
         method: "DELETE",
@@ -151,8 +148,6 @@ const deleteCard = (card, index) => {
     console.log(card);
     setTimeout(() => location.reload(), 2000);
 };
-
-
 
 const choiceCard = (card, list) => {
     const choiceSel = document.querySelectorAll(".new-choice");   
@@ -190,10 +185,8 @@ const choiceCard = (card, list) => {
     card.classList.remove("all-info");
     card.classList.add("hidden");
 
-    
     const radioChoices = document.querySelectorAll('input[name="choice"]');
-
-
+    
     q("#choice-btn").addEventListener("click", () => {
         for (const radioChoice of radioChoices) {
             if(radioChoice.checked) {
@@ -216,4 +209,40 @@ const choiceCard = (card, list) => {
 }
 
 
-export { q, zoomMov, createCard, getNew, getApi, deleteCard, choiceCard }
+
+const addGenre = (string) => {
+    const divNewGenre = document.createElement("div");
+    const labelNew = document.createElement("label");
+    const inputNew = document.createElement("input");
+
+    divNewGenre.classList.add("user-check");
+
+    labelNew.setAttribute("for", `${string.toLowerCase()}`);
+    labelNew.innerHTML = `${string}`;
+
+    inputNew.setAttribute("id", `${string.toLowerCase()}`);
+    inputNew.setAttribute("type", "checkbox");
+    inputNew.setAttribute("name", "genres");
+    inputNew.setAttribute("value", `${string}`);
+
+
+    divNewGenre.append(labelNew, inputNew);
+
+    q(".check-flex").appendChild(divNewGenre);
+}
+
+const loadGenre = (list, userValue) => {
+    for(let i = 0; i < list.length; i++) {
+        addGenre(list[i]);
+        if(list[i].toLowerCase().includes(userValue)){
+            return list;
+        }
+    }
+
+    list.push(userValue);
+    return list;
+}
+
+
+
+export { q, zoomMov, createCard, getNew, getApi, deleteCard, choiceCard, loadGenre, addGenre }

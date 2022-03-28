@@ -1,6 +1,11 @@
-import { q, createCard, getNew, getApi, choiceCard } from "./funzioni.js";
+import { q, createCard, getNew, getApi, choiceCard, loadGenre, addGenre } from "./funzioni.js";
 
+const genresList = localStorage.getItem("genres").split(",");
 const movieList = [];
+// const genReg = document.querySelectorAll("input[name='genres']");
+
+// genReg.forEach((element) => genresList.push(element.value));
+loadGenre(genresList);
 
 getApi()
     .then((data) => {
@@ -42,3 +47,21 @@ q("#sub").addEventListener("click", (event) => {
 });
 
 
+q("#plus").addEventListener("click", (event) => {
+    event.preventDefault();    
+    let genResults = [];
+    const genrePlus = q("#other");
+
+    
+
+    console.log(genresList);
+    if(genrePlus.value == "")
+        alert("Devi inserire un valore per aggiungere un genere!");
+    else {    
+        console.log(genrePlus.value);    
+        genResults = loadGenre(genresList, genrePlus.value);
+    }
+        
+    // localStorage.setItem("genres", genResults);
+    // location.reload();
+});

@@ -33,7 +33,7 @@ header h1 {
     padding: 10px 30px;
     border-radius: 30px;
 }
-.user-add form button {
+.user-add form #sub {
     margin: 10px auto;
     padding: 10px;
     border-radius: 10px;
@@ -41,7 +41,7 @@ header h1 {
     background-color: antiquewhite;
     font-family: 'Red Hat Mono', monospace;
 }
-.user-add form button:hover {
+.user-add form #sub:hover {
     background-color: black;
     color: white;
     font-family: 'Dela Gothic One', cursive;
@@ -64,10 +64,34 @@ header h1 {
     align-items: center;
     gap: 10px;
 }
+.user-add form .genres .add-genre {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+.user-add form .genres .add-genre input {
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: antiquewhite;
+    border: none;
+}
+.user-add form .genres .add-genre button {
+    padding: 4px 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: antiquewhite;
+    font-family: 'Red Hat Mono', monospace;
+}
+.user-add form .genres .add-genre button:hover {
+    background-color: black;
+    color: bisque;
+}
 .user-add form .genres .check-flex {
     display: flex;
     flex-flow: row wrap;
     gap: 25px;
+    justify-content: center;
 }
 .user-add form .genres .check-flex .user-check {
     display: flex;
@@ -130,16 +154,14 @@ header h1 {
     flex-flow: column nowrap;
     justify-content: space-around;
 }
-.movies .cards .all-info .under-card {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-}
 .movies .cards img {
     margin: 10px auto;
 }
 .cards h3 {
     font-family: 'Dela Gothic One', cursive;
+    text-align: center;
+}
+.cards h5 {
     text-align: center;
 }
 .movies .cards p {
@@ -169,7 +191,6 @@ header h1 {
     display: flex;
     flex-flow: column nowrap;
     gap: 30px;
-    margin: auto 0;
 }
 .new-choice span {
     font-family: 'Dela Gothic One', cursive;
