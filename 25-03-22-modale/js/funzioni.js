@@ -207,6 +207,8 @@ const choiceCard = (card, list) => {
             deleteCard(card, indexCardEl);
         } else if(ans === "zoom") {
             zoomMov(cardEl);
+        } else {
+             return alert("You need to choose");
         }
 
 
