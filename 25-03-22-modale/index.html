@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Movies</title>
 
     <link rel="stylesheet" href="modale.css">
 </head>
@@ -13,60 +13,12 @@
         <h1>Movies' library</h1>
     </header>
 
-    <div class="user-add">
-        <form>
-            <div class="user">
-                <label for="title">Title: </label>
-                <input type="text" id="title" placeholder="here your title...">
-            </div>
-            
-            <div class="user">
-                <label for="poster">Poster: </label>
-                <input type="text" id="poster" placeholder="an url is needed...">
-            </div>
-            
-            <div class="user">
-                <label for="year">Year: </label>
-                <input type="text" id="year" placeholder="when did it was produced">
-            </div>
-
-            <div class="user">
-                <label for="description">Description: </label>
-                <input type="text" id="description" placeholder="what is it talking about">
-            </div>
-            
-            <div class="genres">
-                <p>Genres: </p>
-                <div class="check-flex">
-                    <!-- <div class="user-check">                    
-                        <label for="horror">Horror</label>
-                        <input type="checkbox" id="horror" name="genres" value="Horror">
-                    </div>
-
-                    <div class="user-check">
-                        <label for="animazione">Animazione</label>
-                        <input type="checkbox" id="animazione" name="genres" value="Animazione">
-                    </div>
-
-                    <div class="user-check">                    
-                        <label for="fantasy">Fantasy</label>
-                        <input type="checkbox" id="fantasy" name="genres" value="Fantasy">
-                    </div>
-
-                    <div class="user-check">                    
-                        <label for="serieTV">Serie TV</label>
-                        <input type="checkbox" id="serieTV" name="genres" value="SerieTV">
-                    </div> -->
-                </div>
-                <div class="add-genre">                    
-                    <label for="other">Other</label>
-                    <input type="text" id="other" placeholder="put here a new genre ...">
-                    <button type="submit" id="plus">+</button>
-                </div>
-            </div>
-            <button type="submit" id="sub">Add new movie</button>
-        </form>
+    <div class="nav">
+        <button id="add-nav">Add movie</button>
+        <button id="saves">Saves</button>
     </div>
+
+    <div class="user-add"></div>
 
     <div class="black-layer hidden"></div>
     <div class="zoom-card"></div>

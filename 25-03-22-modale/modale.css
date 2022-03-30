@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Inconsolata:wght@200&family=Ramaraja&family=Red+Hat+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dela+Gothic+One&family=Ramaraja&family=Red+Hat+Mono:wght@300&family=Roboto:wght@100&display=swap');
 
 * {
     margin: 0;
@@ -11,9 +11,33 @@ body {
 
 header h1 {
     font-family: 'Dela Gothic One', cursive;
+    font-size: 35px;
     text-align: center;
     padding: 10px 0;
 }
+
+
+
+/*              NAV             */
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 10px 0;
+    background-color: rgb(211, 190, 164);
+}
+.nav button {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+    padding: 5px 30px;
+    border: none;
+    background-color: rgb(211, 190, 164);
+}
+.nav button:hover {
+    background-color: black;
+    color: bisque;
+}
+/*           END  NAV           */
 
 
 
