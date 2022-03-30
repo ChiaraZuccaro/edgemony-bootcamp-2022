@@ -66,9 +66,10 @@ header h1 {
 }
 .user-add form .genres .add-genre {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     gap: 10px;
     align-items: center;
+    justify-content: center;
 }
 .user-add form .genres .add-genre input {
     border-radius: 5px;
@@ -90,16 +91,24 @@ header h1 {
 .user-add form .genres .check-flex {
     display: flex;
     flex-flow: row wrap;
-    gap: 25px;
+    gap: 20px;
     justify-content: center;
+    padding: 5px 0;
 }
 .user-add form .genres .check-flex .user-check {
     display: flex;
     flex-direction: row;
 }
+.user-add form .genres .check-flex .user-check:hover {
+    background-color: black;
+    color: bisque;
+    border-radius: 20px;
+    padding: 5px;
+}
 .user-add form .genres .check-flex .user-check input {
     align-self: center;
-    margin: 0 5px;
+    margin: 0 5px;    
+    list-style: circle;
 }
 /*                       FINE Form                     */
 
@@ -184,17 +193,18 @@ header h1 {
 
 
 /*         SCELTA        */
-.cards .new-choice {
-    justify-content: center;
-}
+
 .new-choice {
     display: flex;
     flex-flow: column nowrap;
-    gap: 30px;
+    gap: 25px;
+    position: relative;
+    top: 150px;
 }
 .new-choice span {
     font-family: 'Dela Gothic One', cursive;
     font-size: 15px;
+    text-align: center;
 }
 .new-choice .choice {
     display: flex;

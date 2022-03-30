@@ -22,18 +22,16 @@ const zoomMov = (cardObj) => {
     const imgElZoom = document.createElement("img");
     const genresElZoom = document.createElement("h6");
     const yearElZoom = document.createElement("h5");
-    const numbElZoom = document.createElement("p");
     const divElZoom = document.createElement("div"); 
 
 
     cardObj.map((movie) => {
         h3ElZoom.textContent = `${movie.title}`;
         for(let i = 0; i < movie.genres.length; i++) {
-            genresElZoom.textContent = `${cardObj.genres[i].toUpperCase()}`;
+            genresElZoom.textContent = `${movie.genres[i].toUpperCase()}`;
         }
         descElZoom.textContent = `${movie.description}`;
         yearElZoom.textContent = `${movie.year}`;
-        numbElZoom.textContent = `${movie.id}`;
 
 
 
@@ -44,7 +42,7 @@ const zoomMov = (cardObj) => {
 
 
         divElZoom.classList.add("cards");
-        divElZoom.append( h3ElZoom, genresElZoom, imgElZoom, descElZoom, yearElZoom, numbElZoom);
+        divElZoom.append( h3ElZoom, genresElZoom, imgElZoom, descElZoom, yearElZoom);
     });
 
     
@@ -210,7 +208,7 @@ const choiceCard = (card, list) => {
 
 
 
-const addGenre = (string) => {
+const createGenre = (string) => {
     const divNewGenre = document.createElement("div");
     const labelNew = document.createElement("label");
     const inputNew = document.createElement("input");
@@ -231,18 +229,27 @@ const addGenre = (string) => {
     q(".check-flex").appendChild(divNewGenre);
 }
 
-const loadGenre = (list, userValue) => {
-    for(let i = 0; i < list.length; i++) {
-        addGenre(list[i]);
-        if(list[i].toLowerCase().includes(userValue)){
+const loadGenre = (list) => {
+    for(let i = 0; i < list.length; i++) {           
+        createGenre(list[i]);
+    }
+    return list;
+}
+
+const addGenre = (userValue, list) => {
+    for(let i = 0; i < list.length; i++){
+        if(userValue == list[i]) {
+            alert("Genere già esistente! Inserirne uno nuovo.");
             return list;
         }
     }
 
+    createGenre(userValue);
     list.push(userValue);
+
+    console.log(list);
     return list;
 }
-
 
 
 export { q, zoomMov, createCard, getNew, getApi, deleteCard, choiceCard, loadGenre, addGenre }

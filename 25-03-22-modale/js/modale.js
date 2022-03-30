@@ -1,11 +1,16 @@
 import { q, createCard, getNew, getApi, choiceCard, loadGenre, addGenre } from "./funzioni.js";
 
-const genresList = localStorage.getItem("genres").split(",");
-const movieList = [];
-// const genReg = document.querySelectorAll("input[name='genres']");
+let genresList = [];
 
-// genReg.forEach((element) => genresList.push(element.value));
+try {
+    genresList = localStorage.getItem("genres").split(",");
+} catch {
+    genresList.push("Horror", "SerieTV", "Fantasy", "Animazione");
+}
+
 loadGenre(genresList);
+
+const movieList = [];
 
 getApi()
     .then((data) => {
@@ -52,16 +57,13 @@ q("#plus").addEventListener("click", (event) => {
     let genResults = [];
     const genrePlus = q("#other");
 
-    
-
-    console.log(genresList);
     if(genrePlus.value == "")
         alert("Devi inserire un valore per aggiungere un genere!");
     else {    
         console.log(genrePlus.value);    
-        genResults = loadGenre(genresList, genrePlus.value);
+        genResults = addGenre(genrePlus.value, genresList);
     }
         
-    // localStorage.setItem("genres", genResults);
-    // location.reload();
+    localStorage.setItem("genres", genResults);
+    location.reload();
 });
