@@ -2,6 +2,7 @@
 
 const q = (selector) => document.querySelector(selector);
 
+const formatMinText = (text) => text.split(" ").slice(0, 15).join(" ") + " ...";
 
 const pageError = () => {
     const h1Err = document.createElement("h1");
@@ -16,44 +17,6 @@ const pageError = () => {
     document.body.appendChild(divErr);
 }
 
-const zoomMov = (cardObj) => {
-    const h3ElZoom = document.createElement("h3");
-    const descElZoom = document.createElement("p");
-    const imgElZoom = document.createElement("img");
-    const genresElZoom = document.createElement("h6");
-    const yearElZoom = document.createElement("h5");
-    const divElZoom = document.createElement("div"); 
-
-
-    cardObj.map((movie) => {
-        h3ElZoom.textContent = `${movie.title}`;
-        for(let i = 0; i < movie.genres.length; i++) {
-            genresElZoom.textContent = `${movie.genres[i].toUpperCase()}`;
-        }
-        descElZoom.textContent = `${movie.description}`;
-        yearElZoom.textContent = `${movie.year}`;
-
-
-
-        imgElZoom.setAttribute("src",`${movie.poster}`);
-        imgElZoom.setAttribute("width","150px");
-        imgElZoom.setAttribute("height","auto");
-        imgElZoom.setAttribute("alt","movie's image");
-
-
-        divElZoom.classList.add("cards");
-        divElZoom.append( h3ElZoom, genresElZoom, imgElZoom, descElZoom, yearElZoom);
-    });
-
-    
-    q(".zoom-card").appendChild(divElZoom);
-    q(".black-layer").classList.remove("hidden");
-    
-    q(".black-layer").addEventListener("click", () => {
-        q(".black-layer").classList.add("hidden");
-        q(".zoom-card").removeChild(q(".cards"));
-    });
-}
 
 
 const createCard = (movie) => {
@@ -71,7 +34,7 @@ const createCard = (movie) => {
     for(let i = 0; i < movie.genres.length; i++) {
         genresEl.textContent = `${movie.genres[i].toUpperCase()}`;
     }
-    descEl.textContent = `${movie.description}`;
+    descEl.textContent = `${formatMinText(movie.description)}`;
     yearEl.textContent = `${movie.year}`;
 
 
@@ -134,6 +97,9 @@ const getApi = async () => {
 }
 
 
+
+
+
 const deleteCard = (card, index) => {    
     fetch(`https://edgemony-backend.herokuapp.com/movies/${index}`, {
         method: "DELETE",
@@ -142,10 +108,51 @@ const deleteCard = (card, index) => {
         },
     });
 
-    card.innerHTML = `<h2 class="erased">Film cancellato</h2>`;
-    console.log(card);
+    card.innerHTML = `<h2 class="erased">Movie erased</h2>`;
     setTimeout(() => location.reload(), 2000);
-};
+}
+const zoomMov = (cardObj) => {
+    const titleElZoom = document.createElement("h3");
+    const descElZoom = document.createElement("p");
+    const imgElZoom = document.createElement("img");
+    const genresElZoom = document.createElement("h6");
+    const yearElZoom = document.createElement("h5");
+    const divElZoom = document.createElement("div"); 
+    const divInfo = document.createElement("div");
+
+
+    cardObj.map((movie) => {
+        titleElZoom.textContent = `${movie.title}`;
+        for(let i = 0; i < movie.genres.length; i++) {
+            genresElZoom.textContent = `${movie.genres[i].toUpperCase()}`;
+        }
+        descElZoom.textContent = `${movie.description}`;
+        yearElZoom.textContent = `${movie.year}`;
+
+
+
+        imgElZoom.setAttribute("src",`${movie.poster}`);
+        imgElZoom.setAttribute("width","150px");
+        imgElZoom.setAttribute("height","auto");
+        imgElZoom.setAttribute("alt","movie's image");
+
+
+        divInfo.classList.add("info");
+        divInfo.append( titleElZoom, genresElZoom, descElZoom, yearElZoom)
+
+        divElZoom.classList.add("cards");
+        divElZoom.append(imgElZoom, divInfo);
+    });
+
+    
+    q(".zoom-card").appendChild(divElZoom);
+    q(".black-layer").classList.remove("hidden");
+    
+    q(".black-layer").addEventListener("click", () => {
+        q(".black-layer").classList.add("hidden");
+        q(".zoom-card").removeChild(q(".cards"));
+    });
+}
 
 const choiceCard = (card, list) => {
     const choiceSel = document.querySelectorAll(".new-choice");   
@@ -160,25 +167,28 @@ const choiceCard = (card, list) => {
             break;
         }
     }
-
     
     let indexCardEl;
     cardEl.map((movie) => indexCardEl = movie.id);
     
 
     choiceSel.item(indexCardEl - 1).innerHTML = `
-        <span>Come desideri procedere?</span>
+        <span>How you would like to proceed?</span>
         <div class="choice">
             <div class="user-choice">                    
-                <label for="delete">Elimina</label>
+                <label for="delete">Delete movie</label>
                 <input type="radio" id="delete" name="choice" value="delete">
             </div>
             <div class="user-choice">                
                 <input type="radio" id="zoom" name="choice" value="zoom">
-                <label for="zoom">Espandi</label>
+                <label for="zoom">See details</label>
             </div>
         </div>
-        <button id="choice-btn">Conferma</button>
+        <button id="choice-btn">Confirm</button>
+
+        <div class="back">
+            <button id="back-btn">Go back</button>
+        </div>
     `;
     card.classList.remove("all-info");
     card.classList.add("hidden");
@@ -203,8 +213,17 @@ const choiceCard = (card, list) => {
         choiceSel.item(indexCardEl - 1).innerHTML = "";
         card.classList.add("all-info");
         card.classList.remove("hidden");
-    });    
+    });
+
+
+    q("#back-btn").addEventListener("click", () => {
+        choiceSel.item(indexCardEl - 1).innerHTML = "";
+        card.classList.add("all-info");
+        card.classList.remove("hidden");
+    });
 }
+
+
 
 
 

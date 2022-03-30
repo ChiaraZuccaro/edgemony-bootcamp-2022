@@ -102,8 +102,7 @@ header h1 {
 .user-add form .genres .check-flex .user-check:hover {
     background-color: black;
     color: bisque;
-    border-radius: 20px;
-    padding: 5px;
+    border-radius: 5px;
 }
 .user-add form .genres .check-flex .user-check input {
     align-self: center;
@@ -188,7 +187,10 @@ header h1 {
 /*                  FINE LISTA FILM                    */
 
 
-
+/*                     REMOVE                 */
+.erased {
+    text-align: center;
+}
 
 
 
@@ -199,7 +201,7 @@ header h1 {
     flex-flow: column nowrap;
     gap: 25px;
     position: relative;
-    top: 150px;
+    top: 30px;
 }
 .new-choice span {
     font-family: 'Dela Gothic One', cursive;
@@ -253,21 +255,25 @@ header h1 {
 }
 .zoom-card .cards {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     justify-content: center;
     background-color: antiquewhite;
     width: 75vw;
     height: 500px;
-    align-items: center;
-    padding: 20px;
     border-radius: 20px;
 }
-.zoom-card .cards .all-info {
+.zoom-card .cards img {
+    width: 300px;
+    border-radius: 20px;
+}
+.zoom-card .cards .info {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    margin: 20px 10px;
 }
-.zoom-card .cards .all-info h3 {
+.zoom-card .cards .info h3 {
     font-family: 'Dela Gothic One', cursive;
 }
 .zoom-card .cards p {
@@ -301,4 +307,10 @@ footer {
 footer p {
     margin: 10px auto;
     padding: 20px;
+}
+footer a {
+    color: black;
+}
+footer a:hover {
+    text-decoration: none;
 }

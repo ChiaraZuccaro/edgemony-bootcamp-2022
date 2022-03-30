@@ -5,7 +5,7 @@ let genresList = [];
 try {
     genresList = localStorage.getItem("genres").split(",");
 } catch {
-    genresList.push("Horror", "SerieTV", "Fantasy", "Animazione");
+    genresList.push("Horror", "TVSeries", "Fantasy", "Animation");
 }
 
 loadGenre(genresList);
