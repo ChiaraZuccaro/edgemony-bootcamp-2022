@@ -1,45 +1,53 @@
 //                    ESERCITAZIONE 21-03-22
      
-// const rubric = [
-//         {
-//             name: "Robert",
-//             surname: "Pattinson",
-//             phone: "349-539 2541 12",
-//             saves: "./star-with-five-points.png"
-//         },
-//         {
-//             name: "Homer",
-//             surname: "Simpson",
-//             phone: "375-520 5874 47",
-//             saves: "./star-with-five-points.png"
-//         },
-//         {
-//             name: "Patrick",
-//             surname: "Star",
-//             phone: "385-267 4286 51",
-//             saves: ""
-//         },
-//         {
-//             name: "Rick",
-//             surname: "Sanchez",
-//             phone: "341-456 7256 52",
-//             saves: "./star-with-five-points.png"
-//         }
-//         ,{
-//             name: "Bojack",
-//             surname: "Horseman",
-//             phone: "306-465 8222 64",
-//             saves: ""
-//         }
-//     ]
 const q = (selector) => document.querySelector(selector);
 
-const arrayObj = JSON.parse(localStorage.getItem("rubric"));
+let arrayObj;
 const radioSaves = document.querySelectorAll('input[name="saves"]');
 const ul = q(".person-list");
 const name = q("#name");
 const surname = q("#surname");
 const phone = q("#phone");
+
+
+try {
+    arrayObj = JSON.parse(localStorage.getItem("rubric").split(","));
+
+} catch {
+    arrayObj = [
+        {
+            name: "Robert",
+            surname: "Pattinson",
+            phone: "349-539 2541 12",
+            saves: "./star-with-five-points.png"
+        },
+        {
+            name: "Homer",
+            surname: "Simpson",
+            phone: "375-520 5874 47",
+            saves: "./star-with-five-points.png"
+        },
+        {
+            name: "Patrick",
+            surname: "Star",
+            phone: "385-267 4286 51",
+            saves: ""
+        },
+        {
+            name: "Rick",
+            surname: "Sanchez",
+            phone: "341-456 7256 52",
+            saves: "./star-with-five-points.png"
+        }
+        ,{
+            name: "Bojack",
+            surname: "Horseman",
+            phone: "306-465 8222 64",
+            saves: ""
+        }
+    ]
+}
+
 
 const visualList = () => {
     const listHTML = arrayObj.map((element) =>

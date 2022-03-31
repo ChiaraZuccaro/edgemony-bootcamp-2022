@@ -8,9 +8,14 @@ html, body {
     text-align: center;
     /* font-family: 'Hubballi', cursive; */
     font-family: 'Patrick Hand', cursive;
-    background-color: burlywood;
+    /* background-color: burlywood; */
     line-height: 1.5;
     font-size: 18px;
+
+    background: #A47B4C;
+    background: -moz-linear-gradient(-45deg, #A47B4C 0%, #CBC47E 60%, #127275 100%);
+    background: -webkit-linear-gradient(-45deg, #A47B4C 0%, #CBC47E 60%, #127275 100%);
+    background: linear-gradient(135deg, #A47B4C 0%, #CBC47E 60%, #127275 100%);
 }
 
 
@@ -20,13 +25,35 @@ header {
     width: 100%;
     margin: 10px;
     font-family: 'Bungee', cursive;
-    font-size: 25px;
+    font-size: 28px;
 }
 header a {
     text-decoration: none;
     color: black;
 }
 
+
+/*          NAVBAR          */
+.nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+
+    background-color: aliceblue;
+}
+.nav button {
+    border: none;
+    padding: 10px 30px;
+    background-color: aliceblue;
+    font-family: 'Hubballi', cursive;
+    font-size: 20px;
+}
+.nav button:hover {
+    background-color: black;
+    color: bisque;
+    border-radius: 5px;
+    transition: all 0.3s ease-out;
+}
 
 
 
@@ -51,6 +78,7 @@ header a {
     justify-content: space-evenly;
     padding: 20px;
     font-family: 'Hubballi', cursive;
+    gap: 20px;
 }
 .wrapper .add-remove #add {
     width: 50%;
@@ -58,7 +86,12 @@ header a {
     flex-direction: column;
     flex-wrap: nowrap;
     row-gap: 15px;
-    padding: 0 50px;
+    padding: 30px;
+    border-radius: 30px;
+
+    
+    background: rgb(255, 255, 255);
+    border: 2px dashed #1C6EA4;
 }
 .wrapper .add-remove #add .labels {
     display: flex;
@@ -74,6 +107,7 @@ header a {
     border-bottom-right-radius: 50px;
     border: none;
     padding: 0 20px;
+    background-color: #ecd0af;
     /* font-family: 'Amatic SC', cursive; */
 }
 .wrapper .add-remove #add .labels #radio {
@@ -99,7 +133,7 @@ header a {
 .wrapper .add-remove button:hover {
     color: black;
     background-color: white;
-    border: 1px black solid;
+    border: 1px black inset;
 }
 .wrapper .add-remove #remove {
     width: 50%;
@@ -109,7 +143,11 @@ header a {
     flex-wrap: nowrap;
     row-gap: 15px;
     align-self: end;
-    padding: 0 40px;
+    padding: 30px;
+    border-radius: 30px;
+
+    background: rgb(255, 255, 255);
+    border: 2px dashed #1C6EA4;
 }
 .wrapper .add-remove #remove .labels {
     display: flex;
@@ -122,6 +160,7 @@ header a {
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
+    background-color: #ecd0af;
 }
 .wrapper .add-remove #remove .rem-btn {
     display: none;
@@ -133,13 +172,16 @@ header a {
     margin: 10px auto;
 }
 
+
+
+
 .cards {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 30px;
     width: 200px;
     padding: 5px 10px;
     margin: 5px auto;
-    border: 1px black solid;
+    border: 2px solid #1C6EA4;
 }
 
 
@@ -149,4 +191,58 @@ header a {
 footer {
     width: 100%;
     font-size: 15px;
+    background-color: black;
+    color: azure;
+}
+footer p {
+    padding: 5px 20px;
+}
+footer a {
+    color: azure;
+}
+footer a:hover {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+/*    MEDIA QUERIES    */ 
+/* Telefono */
+@media (max-width: 321px) {
+    header {
+        font-size: 18px;
+    }
+
+    .nav button {
+        font-size: 13px;
+    }
+
+
+
+
+    footer {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 376px) {
+    header {
+        padding: auto 4px;
+        font-size: 18px;
+    }
+
+    .nav button {
+        font-size: 13px;
+    }
+
+
+
+
+    footer {
+        font-size: 13px;
+    }
 }
