@@ -1,0 +1,4 @@
+ 
+banane,3 
+finocchio,2 
+melenzane,4 
