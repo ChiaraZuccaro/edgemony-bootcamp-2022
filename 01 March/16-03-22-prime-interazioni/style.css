@@ -1,0 +1,30 @@
+* {
+    text-align: center;
+}
+body {
+    color: beige;
+    background-image: url(https://wallup.net/wp-content/uploads/2017/11/23/500108-Star_Wars-Death_Star-AT-AT-space-night_sky.jpg);
+    background-size: cover; 
+}
+
+.comments-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
+}
+.comments-section textarea {
+    width: 100%;
+    margin: 20px 0;
+    resize: none;
+}
+ul {
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+
+.com-in {
+    background-color: rgb(235, 235, 235);
+}
