@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    margin: 10px auto;
+    padding: 10px;
+}
+header #profile {
+    width: 550px;
+
+    border-radius: 200px;
+}
+header .surname {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+header .surname h1 {
+    font-family: 'Righteous', cursive;
+}

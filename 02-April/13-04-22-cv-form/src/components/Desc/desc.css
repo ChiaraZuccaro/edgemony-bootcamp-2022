@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto:wght@300&display=swap');
+
+.description {
+    width: 80%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    padding: 15px 20px;
+    margin: 10px auto;
+
+    background-color: antiquewhite;
+
+    border: 1px rgb(201, 89, 89) solid;
+    border-radius: 30px;
+}
+.description h2 {
+    font-family: 'Concert One', cursive;
+}
+.description p {
+    font-family: 'Roboto', sans-serif;
+}

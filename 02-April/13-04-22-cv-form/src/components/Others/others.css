@@ -1,0 +1,44 @@
+.flex-other {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+
+    padding: 15px 30px;
+}
+.flex-other .profession {
+    padding: 15px 20px;
+    
+    width: 30%;
+
+    text-align: center;
+
+    background-color: antiquewhite;
+
+    border: 1px rgb(201, 89, 89) solid;
+    border-radius: 30px;
+}
+.flex-other .family {
+    padding: 15px 20px;
+    
+    width: 30%;
+
+    text-align: center;
+
+    background-color: antiquewhite;
+
+    border: 1px rgb(201, 89, 89) solid;
+    border-radius: 30px;
+}
+.flex-other .age {
+    padding: 15px 20px;
+
+    width: 30%;
+    
+    text-align: center;
+
+    background-color: antiquewhite;
+
+    border: 1px rgb(201, 89, 89) solid;
+    border-radius: 30px;
+}
