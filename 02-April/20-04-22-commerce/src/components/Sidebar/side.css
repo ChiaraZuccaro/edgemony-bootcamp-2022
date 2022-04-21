@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Gujarati:wght@200&family=Lobster&display=swap');
+
+aside {
+    grid-area: sidebar;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    background-color: rgb(196, 108, 108);
+
+    border-top-right-radius: 20px;
+    border-top: 3px black solid;
+    border-right: 3px black solid;
+
+    padding: 25px 5px;
+}
+aside h2 {
+    text-align: center;
+
+    font-family: 'Lobster', cursive;
+    font-size: 35px;
+    
+    padding: 0 25px;
+}
+aside .categories {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 0 5px;
+}
+aside .categories li {
+    list-style: none;
+}
+aside .categories a {
+
+    text-decoration: none;
+    text-align: center;
+
+    font-family: 'Anek Gujarati', sans-serif;
+    font-size: 23px;
+
+    color: rgb(0, 0, 0);
+
+    padding: 0 25px;
+}
+aside .categories a:hover {
+    background-color: black;
+    color: rgb(179, 101, 101);
+    border-radius: 5px;
+}
+aside .categories li.active a {
+    background-color: aquamarine;
+}

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
+import "./side.css";
 
 const mock = ["...", "...", "..."];
 
-export const Sidebar = () => {
+export const Sidebar = (props) => {
   const [categories, setCategories] = useState(mock);
 
   const getData = async () => {
@@ -11,19 +12,34 @@ export const Sidebar = () => {
     );
     const data = await response.json();
     setCategories(data);
+    
+    data.unshift("everything");
   };
 
   useEffect(() => {
     getData();
   }, []);
 
+  const firstUpCase = (word) => {
+    const letterUp = word.split("").shift().toUpperCase();    
+    const wordNoFirst = word.split("").splice(1, word.split("").length);
+    wordNoFirst.unshift(letterUp);
+
+    return wordNoFirst.join("");
+  }
+
+  const clicked = (event, category) => {
+    event.preventDefault();
+    props.catSelected(category);
+  }
+
   return (
     <aside>
       <h2>Categories</h2>
-      <ul>
+      <ul className="categories">
         {categories.map((item, index) => (
           <li key={index}>
-            <a href={item}>{item}</a>
+            <a href={item} onClick={(event) => clicked(event,item)}>{firstUpCase(item)}</a>
           </li>
         ))}
       </ul>

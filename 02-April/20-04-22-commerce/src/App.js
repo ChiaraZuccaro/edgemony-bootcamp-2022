@@ -4,14 +4,24 @@ import {Header} from "./components/Header/header";
 import {Footer} from "./components/Footer/footer";
 import { Sidebar } from './components/Sidebar/sidebar';
 import { List } from './components/List/list';
+import { useState } from 'react';
 
 function App() {
-  return <main>
+
+  const [category, setCategory] = useState("");
+
+  const catSelect = (value) => {
+    console.log(value);
+    setCategory(value);
+  }
+
+
+  return (<main>
     <Header/>
-    <Sidebar/>
-    <List/>
+    <Sidebar catSelected={catSelect}/>
+    <List category={category}/>
     <Footer/>
-  </main>;
+  </main>);
 }
 
 export default App;

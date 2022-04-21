@@ -1,20 +1,19 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 
 
 export const Product = (props) => {
+  const name = props.name || "Prodotto";
+  const price = props.price || "N/A";
+  const image = props.image || "";
 
-    const [price, setPrice] = useState("Prezzo: 1000€");
-    const [title, setTitle] = useState("Prodotto");
-
-    setTitle(props.title);
-    setPrice(props.price);
-
-    return (
-      <article>
-        <img src={props.img} alt="product img" width="100px"/>
-        <h2>{title}</h2>
-        <p>{price}</p>
-      </article>
-    );
+  return (
+    <article>
+      <img src={image} alt="product img"/>
+      <div className="bottom-card">        
+        <h2>{name}</h2>
+        <p>{price} $</p>
+      </div>
+    </article>
+  );
 };
