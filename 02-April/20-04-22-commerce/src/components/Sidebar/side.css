@@ -50,6 +50,10 @@ aside .categories a:hover {
     color: rgb(179, 101, 101);
     border-radius: 5px;
 }
-aside .categories li.active a {
-    background-color: aquamarine;
+aside .categories li a.active {
+    background-color:black;
+
+    color: burlywood;
+
+    border-radius: 10px;
 }

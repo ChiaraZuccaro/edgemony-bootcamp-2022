@@ -5,6 +5,7 @@ const mock = ["...", "...", "..."];
 
 export const Sidebar = (props) => {
   const [categories, setCategories] = useState(mock);
+  const [current, setCurrent] = useState("");
 
   const getData = async () => {
     const response = await fetch(
@@ -31,6 +32,7 @@ export const Sidebar = (props) => {
   const clicked = (event, category) => {
     event.preventDefault();
     props.catSelected(category);
+    setCurrent(category);
   }
 
   return (
@@ -39,7 +41,11 @@ export const Sidebar = (props) => {
       <ul className="categories">
         {categories.map((item, index) => (
           <li key={index}>
-            <a href={item} onClick={(event) => clicked(event,item)}>{firstUpCase(item)}</a>
+            <a href={item}
+            className={item === current ? "active" : ""}
+            onClick={(event) => clicked(event,item)}>
+              {firstUpCase(item)}
+            </a>
           </li>
         ))}
       </ul>

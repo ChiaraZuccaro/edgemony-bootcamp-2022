@@ -5,7 +5,7 @@ import "./list.css"
 
 const example = ["prodotto 1", "prodotto 2", "prodotto 3"];
 
-export const List = ({ category }) => {
+export const List = ({ category, search }) => {
     const [products, setProduct] = useState(example);
     const [ localeData, setLocalData] = useState([]);
 
@@ -33,6 +33,14 @@ export const List = ({ category }) => {
 
         setProduct(filteredList);
     }, [category]);
+
+    useEffect(() => {
+        const filteredList = localeData.filter((product) => (
+            product.title.toLowerCase().includes(search.toLowerCase())
+        ))
+        setProduct(filteredList);
+    }, [search]);
+
 
     return (
         <section className="products">
