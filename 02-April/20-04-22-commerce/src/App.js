@@ -22,7 +22,7 @@ function App() {
   return (<main>
     <Header searching={searching}/>
     <Sidebar catSelected={catSelect}/>
-    <List category={category} search={searching}/>
+    <List category={category} search={search}/>
     <Footer/>
   </main>);
 }
