@@ -1,11 +1,34 @@
-export const getFetch = async () => {
-    const res = await fetch("https://edgemony-backend.herokuapp.com/movies", {
-        method: "GET",
+const BASE_URL = "https://edgemony-backend.herokuapp.com/movies";
+
+
+//  GET
+const GET = () => fetch(BASE_URL).then((res) => res.json());
+
+
+//  POST
+const POST = (body) => ( 
+    fetch(BASE_URL), {
+        method:"POST",
         headers: {
-            "Content-Type" : "application/json",
-        }
-    })
-    const data = await res.json();
-    console.log(data);
-    return data;
-}
+            "Content-type" : "application/json"
+        },
+        body: JSON.stringify(body)
+    }
+)
+
+//  DELETE
+const DELETE = (id) => fetch(`${BASE_URL}/${id}`, { method: "DELETE"});
+
+
+//   PUT
+const PUT = (id, body) => ( 
+    fetch(`${BASE_URL}/${id}`), {
+        method:"PUT",
+        headers: {
+            "Content-type" : "application/json"
+        },
+        body: JSON.stringify(body)
+    }
+)
+
+export { GET, POST, DELETE, PUT};

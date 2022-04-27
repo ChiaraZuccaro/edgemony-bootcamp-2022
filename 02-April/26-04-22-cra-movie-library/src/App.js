@@ -1,30 +1,35 @@
-import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import { useEffect, useState } from 'react';
 import './App.css';
-import { CardMovie } from './components/Cardmovie/cardMovie';
+import { CardMovie } from './components/CardList/Cardmovie/cardMovie';
 import { Header } from './components/Header/header';
-import { getFetch } from "./utils"
+
+import { CardList } from "./components/CardList/cardlist";
 
 function App() {
-  const [ movieList, setMovieList] = useState([]);
+  
 
-  useEffect(() => {
-    setMovieList(getFetch());
-  }, [])
-
-  console.log(movieList);
   return (
-    <main>
-      <Header/>
-      <ul className='movieList'>
-      {
-        movieList.map((movie) => (
-          <li key={movie.id}>            
-            <CardMovie />
-          </li>
-        ))
-      }
-      </ul>
-    </main>
+    <Router>
+      <div>
+        <Header/>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/add-movie">Add new movie</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<CardList />}/>
+          <Route path="/add-movie" element={<CardMovie/>} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
