@@ -1,6 +1,10 @@
 import "./card.css"
 
 export const CardMovie = ({ title, image, description, year, genres }) => {
+    const formatText = (text) => {
+        return text.split(" ").splice(0,35).join(" ")
+    }
+
     return (
         <div className="cardMovie">
             <div className="overlay"></div>
@@ -9,7 +13,7 @@ export const CardMovie = ({ title, image, description, year, genres }) => {
             <div className="movie">                
                 <h2>{title}</h2>
                 <p>{year}</p>
-                <p>{description}</p>
+                <p>{formatText(description)} ...</p>
                 <ul className="categories">
                     {
                         genres.map((cat, i) => (
@@ -19,7 +23,6 @@ export const CardMovie = ({ title, image, description, year, genres }) => {
                         ))
                     }
                 </ul>
-                {/* <p>Generi</p> */}
             </div>
         </div>
     )

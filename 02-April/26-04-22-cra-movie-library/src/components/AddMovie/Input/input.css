@@ -5,4 +5,10 @@
 }
 .user-add input {
     padding: 7px 10px;
+
+    border: 1px solid yellowgreen;
+    border-radius: 10px;
+}
+.user-add label {
+    padding: 0 5px;
 }
