@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 // import { useEffect, useState } from 'react';
 import './App.css';
-import { CardMovie } from './components/CardList/Cardmovie/cardMovie';
-import { Header } from './components/Header/header';
+import { AddMovie } from "./components/AddMovie/addmovie"
+// import { Header } from './components/Header/header';
 
 import { CardList } from "./components/CardList/cardlist";
 
@@ -12,8 +12,9 @@ function App() {
   return (
     <Router>
       <div>
-        <Header/>
-        <nav>
+        {/* <Header/> */}
+        <nav className="navbar">
+          <h1>Personal Library</h1>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -26,7 +27,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<CardList />}/>
-          <Route path="/add-movie" element={<CardMovie/>} />
+          <Route path="/add-movie" element={<AddMovie/>} />
         </Routes>
       </div>
     </Router>
