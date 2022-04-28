@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;300&display=swap');
+
+.form-add {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin: 10px auto;
+    padding: 0 30px;
+
+    width: 100%;
+
+    font-family: 'Kanit', sans-serif;
+}
+.form-add #sub {
+    font-size: 18px;
+    font-family: 'Kanit', sans-serif;
+
+    padding: 10px 40px;
+
+    margin: 15px auto;
+
+    border-radius: 8px;
+    border: none;
+
+    background-color: brown;
+
+    transition: all 0.3s ease-in-out;
+
+    cursor: pointer;
+}
+.form-add #sub:hover {
+    background-color: black;
+    color: brown;
+}

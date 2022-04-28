@@ -6,7 +6,7 @@
 .user-add input {
     padding: 7px 10px;
 
-    border: 1px solid yellowgreen;
+    border: 1px solid rgb(124, 124, 124);
     border-radius: 10px;
 }
 .user-add label {

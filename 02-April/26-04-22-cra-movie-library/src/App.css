@@ -1,10 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Titillium+Web&display=swap');
+
 .navbar {    
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+
+    background-color: brown;
 }
-.navbar h1 {
+.navbar .logo-h1 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 10px;
+
+    padding: 5px 10px;
+}
+.navbar .logo-h1 img {
+    width: 100px;
+}
+.navbar .logo-h1 h1 {
     padding: 5px ;
+
+    font-size: 30px;
+    font-family: 'Bangers', cursive;
 }
 .navbar ul {
     display: flex;
@@ -16,4 +34,8 @@
     list-style: none;
     
     padding: 5px 20px;
+
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+
 }

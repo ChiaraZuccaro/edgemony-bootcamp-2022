@@ -1,6 +1,7 @@
 import "./card.css"
 
 export const CardMovie = ({ title, image, description, year, genres }) => {
+    
     const formatText = (text) => {
         return text.split(" ").splice(0,35).join(" ")
     }
@@ -15,13 +16,13 @@ export const CardMovie = ({ title, image, description, year, genres }) => {
                 <p>{year}</p>
                 <p>{formatText(description)} ...</p>
                 <ul className="categories">
-                    {
+                    {/* {
                         genres.map((cat, i) => (
                             <li key={i}>
                                 <p>{cat}</p>
                             </li>
                         ))
-                    }
+                    } */}
                 </ul>
             </div>
         </div>

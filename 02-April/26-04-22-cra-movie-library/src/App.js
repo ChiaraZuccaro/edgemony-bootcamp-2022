@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 // import { useEffect, useState } from 'react';
 import './App.css';
-import { AddMovie } from "./components/AddMovie/addmovie"
-// import { Header } from './components/Header/header';
+import { AddMovie } from "./pages/AddMovie/addmovie"
 
 import { CardList } from "./components/CardList/cardlist";
 
@@ -12,9 +11,11 @@ function App() {
   return (
     <Router>
       <div>
-        {/* <Header/> */}
         <nav className="navbar">
-          <h1>Personal Library</h1>
+          <div className="logo-h1">
+            <img src="https://th.bing.com/th/id/R.8cf77a81eb7e7f24ee40fc97d6e677bb?rik=00HtyTzGzelBug&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fyTo%2fMEo%2fyToMEoEjc.png&ehk=78LdDY8Uv6QoggYhdm52%2f%2ffqEjU015ryhJzuFOz3u%2f0%3d&risl=&pid=ImgRaw&r=0" alt="logos movie"/>
+            <h1>Movie Time!</h1>
+          </div>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -26,8 +27,9 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/" element={<CardList />}/>
+          <Route path="/edit-movie/:id" element={<AddMovie/>} />
           <Route path="/add-movie" element={<AddMovie/>} />
+          <Route path="/" element={<CardList />}/>
         </Routes>
       </div>
     </Router>
