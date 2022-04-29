@@ -6,6 +6,64 @@
     box-sizing: border-box;
 }
 
+.hidden {
+    display: none;
+}
+
+
+.choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0 20px;
+
+    z-index: 4;
+}
+.choice p {
+    color: white;
+
+    text-align: center;
+
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+.choice .choice-button {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+}
+.choice .choice-button button {
+    color: white;
+
+    font-size: 16px;
+
+    z-index: 4;
+
+    background-color: transparent;
+
+    border: 1px solid white;
+    border-radius: 20px;
+
+    padding: 5px 12px;
+
+    transition: all 0.3s ease-in-out;
+}
+.choice .choice-button button:hover {
+    background-color: white;
+
+    color: black;
+}
+
+
 .cardMovie {
     border: 1px black solid;
     border-radius: 20px;
@@ -26,6 +84,33 @@
     position: absolute;
 
     z-index: 2;
+}
+.cardMovie #x {
+    position: absolute;
+    top: 10px;
+    left: 235px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 20px;
+
+    z-index: 4;
+
+    background-color: transparent;
+
+    border: 1px solid white;
+    border-radius: 20px;
+
+    padding: 1px 6px;
+
+    transition: all 0.3s ease-in-out;
+}
+.cardMovie #x:hover {
+    background-color: white;
+
+    color: black;
 }
 .cardMovie img {
     position: relative;
@@ -57,7 +142,7 @@
     gap: 20px;
 
     width: 100%;
-    height: 100%;
+    height: 89%;
 
     padding: 20px 15px;
 
@@ -70,6 +155,7 @@
 .cardMovie .movie a:hover {
     text-decoration: underline;
 }
+
 .cardMovie .movie h3 {
     font-family: 'Oleo Script', cursive;
     font-size: 25px;
