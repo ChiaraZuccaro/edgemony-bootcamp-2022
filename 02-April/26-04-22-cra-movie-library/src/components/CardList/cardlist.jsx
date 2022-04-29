@@ -18,7 +18,7 @@ export const CardList = () => {
                     <li key={movie.id}>            
                     <CardMovie title={movie.title} image={movie.poster} 
                     description={movie.description} year={movie.year} 
-                    />
+                    genres={movie.genres} id={movie.id}/>
                     </li>
                 ))
             }

@@ -46,6 +46,8 @@
     transform: translate(-50%,-50%);
     z-index: 3;
 
+    text-align: center;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,6 +60,17 @@
     padding: 10px 15px;
 
     color: rgb(223, 255, 173);
+}
+.cardMovie .movie a {
+    color: white;
+    
+    text-decoration: none;
+}
+.cardMovie .movie a:hover {
+    text-decoration: underline;
+}
+.cardMovie .movie h3 {
+    font-size: 25px;
 }
 
 .categories {

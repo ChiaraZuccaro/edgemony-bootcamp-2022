@@ -1,28 +1,28 @@
+import { Link } from "react-router-dom";
 import "./card.css"
 
-export const CardMovie = ({ title, image, description, year, genres }) => {
-    
-    const formatText = (text) => {
-        return text.split(" ").splice(0,35).join(" ")
-    }
+export const CardMovie = ({ title, image, description, year, genres, id }) => {
+    const formatText = (text) => text.split(" ").splice(0,35).join(" ");
 
     return (
         <div className="cardMovie">
             <div className="overlay"></div>
-            <img src={image} alt={title} />       
+            <img src={image} alt={title.toLowerCase()} />       
         
-            <div className="movie">                
-                <h2>{title}</h2>
+            <div className="movie">
+                <Link to={`/edit-movie/${id}`}>
+                    <h3>{title}</h3>
+                </Link>
                 <p>{year}</p>
                 <p>{formatText(description)} ...</p>
                 <ul className="categories">
-                    {/* {
-                        genres.map((cat, i) => (
+                    {
+                        genres && genres.map((cat, i) => (
                             <li key={i}>
                                 <p>{cat}</p>
                             </li>
                         ))
-                    } */}
+                    }
                 </ul>
             </div>
         </div>

@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-// import { useEffect, useState } from 'react';
-import './App.css';
 import { AddMovie } from "./pages/AddMovie/addmovie"
 
 import { CardList } from "./components/CardList/cardlist";
+import { EditSection } from "./pages/EditSection/editsection";
+
+import './App.css';
+
 
 function App() {
-  
 
   return (
     <Router>
@@ -27,9 +28,9 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/edit-movie/:id" element={<AddMovie/>} />
-          <Route path="/add-movie" element={<AddMovie/>} />
-          <Route path="/" element={<CardList />}/>
+          <Route path="/edit-movie/:id" element={<EditSection />} />
+          <Route path="/add-movie" element={<AddMovie />} />
+          <Route path="/" element={<CardList />} />
         </Routes>
       </div>
     </Router>

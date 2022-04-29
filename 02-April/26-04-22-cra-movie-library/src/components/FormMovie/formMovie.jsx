@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { POST, PUT } from "../../utils";
 import "./addform.css"
 import { Input } from "./Input/input"
@@ -11,6 +12,9 @@ export const FormMovie = ({ modalVisibility , action }) => {
     const [poster, setPoster] = useState("");
 
     const genreToArray = (Garray) => Garray.split(", ")
+
+    const location = useLocation();
+    const movieId = location.pathname.split("/").reverse()[0];
 
     const receiveUserTitle = (valueTitle) => {
         setTitle(valueTitle);
@@ -52,7 +56,7 @@ export const FormMovie = ({ modalVisibility , action }) => {
                 window.location.reload()
             }, 3000)
         } else {
-            PUT({
+            PUT(movieId,{
                 title,
                 poster,
                 year,
