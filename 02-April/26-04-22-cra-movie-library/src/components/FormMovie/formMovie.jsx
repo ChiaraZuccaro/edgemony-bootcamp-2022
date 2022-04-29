@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { POST, PUT } from "../../utils";
 import "./addform.css"
 import { Input } from "./Input/input"
@@ -10,6 +10,8 @@ export const FormMovie = ({ modalVisibility , action }) => {
     const [description, setDescription] = useState("");
     const [genres, setGenres] = useState("");
     const [poster, setPoster] = useState("");
+
+    let goHome = useNavigate();
 
     const genreToArray = (Garray) => Garray.split(", ")
 
@@ -41,7 +43,6 @@ export const FormMovie = ({ modalVisibility , action }) => {
         receiveUserGenre(genres);
         receiveUserPoster(poster);
 
-
         if(action === "POST") {
             POST({
                 title,
@@ -52,8 +53,8 @@ export const FormMovie = ({ modalVisibility , action }) => {
             })
 
             modalVisibility(true);
-            setTimeout(() => {                
-                window.location.reload()
+            setTimeout(() => {
+                goHome("/")       
             }, 3000)
         } else {
             PUT(movieId,{
@@ -63,8 +64,10 @@ export const FormMovie = ({ modalVisibility , action }) => {
                 genres: genreToArray(genres),
                 description
             })
-        }
-        
+            setTimeout(() => {
+                goHome("/")       
+            }, 500)
+        }       
     }
 
     return(
