@@ -1,0 +1,23 @@
+.home {
+    margin: 20px 0;
+}
+
+.home .user-add {
+    width: 550px;
+    height: 100px;
+
+    justify-content: center;
+
+    margin: 0 auto;
+}
+.home .user-add label {
+    font-size: 20px;
+
+    text-align: center;
+}
+.home .user-add input {
+    padding: 10px 15px;
+}
+.home .user-add input::placeholder {
+    font-size: 15px;
+}
