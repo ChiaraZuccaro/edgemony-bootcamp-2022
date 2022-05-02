@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.add-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 20px auto;
+}
+.add-page h2 {
+    font-size: 30px;
+    font-family: 'Fredoka One', cursive;
+}

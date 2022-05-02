@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap');
+
+.post-alert {
+    background-color: darkseagreen;
+
+    text-align: center;
+    
+    font-size: 20px;
+    font-family: 'Radio Canada', sans-serif;
+
+    padding: 15px 0;
+}
+.edit-alert {
+    background-color:darksalmon;
+
+    text-align: center;
+    
+    font-size: 20px;
+    font-family: 'Radio Canada', sans-serif;
+
+    padding: 15px 0;
+}
+.delete-alert {
+    background-color:rgb(241, 60, 0);
+
+    text-align: center;
+    
+    font-size: 20px;
+    font-family: 'Radio Canada', sans-serif;
+
+    padding: 15px 0;
+}
